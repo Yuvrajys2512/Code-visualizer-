@@ -1,10 +1,18 @@
 import { OrbitControls, Stars } from '@react-three/drei'
-import { Bloom, EffectComposer, Vignette } from '@react-three/postprocessing'
+import {
+  Bloom,
+  ChromaticAberration,
+  EffectComposer,
+  Noise,
+  Vignette,
+} from '@react-three/postprocessing'
 import { useMemo, useRef } from 'react'
+import * as THREE from 'three'
 import type { OrbitControls as OrbitControlsImpl } from 'three-stdlib'
 import { VOID_COLOR } from '../palette'
 import type { Layout } from '../types'
 import { ClusterLabels } from './ClusterLabels'
+import { Nebula } from './Nebula'
 import { buildCurves } from './curves'
 import { Edges } from './Edges'
 import { FocusController, type CameraGoal } from './FocusController'
@@ -72,6 +80,7 @@ export function Constellation({
       <color attach="background" args={[VOID_COLOR]} />
       <fog attach="fog" args={[VOID_COLOR, 220, 520]} />
       <Stars radius={320} depth={60} count={1700} factor={2.4} saturation={0.1} fade speed={0.4} />
+      <Nebula layout={layout} />
 
       <group onPointerMissed={() => onSelect(null)}>
         <Nodes
@@ -103,8 +112,10 @@ export function Constellation({
           the composer's float render targets and would show a black void. */}
       {!new URLSearchParams(window.location.search).has('nofx') && (
         <EffectComposer>
-          <Bloom mipmapBlur intensity={1.25} luminanceThreshold={0.18} luminanceSmoothing={0.32} radius={0.72} />
-          <Vignette offset={0.22} darkness={0.82} />
+          <Bloom mipmapBlur intensity={1.15} luminanceThreshold={0.26} luminanceSmoothing={0.3} radius={0.78} />
+          <ChromaticAberration offset={new THREE.Vector2(0.0006, 0.001)} />
+          <Noise opacity={0.04} />
+          <Vignette offset={0.22} darkness={0.85} />
         </EffectComposer>
       )}
     </>

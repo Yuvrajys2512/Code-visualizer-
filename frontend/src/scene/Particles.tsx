@@ -11,10 +11,14 @@ interface ParticlesProps {
   focusSet: Set<string> | null
 }
 
-const MAX_PARTICLES = 3600
+const MAX_HEADS = 1400
+/** trailing ghosts per spark, fading behind the head — reads as a comet */
+const TRAIL = 3
+const TRAIL_FADE = [1, 0.42, 0.15]
+const TRAIL_LAG = 0.022
 
 /**
- * Sparks travelling source -> target along each curve: the direction of every
+ * Comets travelling source -> target along each curve: the direction of every
  * dependency is readable at a glance, and the sky visibly "flows".
  */
 export function Particles({ layout, curves, focusSet }: ParticlesProps) {
@@ -22,8 +26,8 @@ export function Particles({ layout, curves, focusSet }: ParticlesProps) {
   const texture = useMemo(makeGlowTexture, [])
 
   const { count, edgeOf, phase, speed, positions, colors } = useMemo(() => {
-    const perEdge = Math.max(1, Math.min(2, Math.floor(MAX_PARTICLES / Math.max(1, curves.edgeCount))))
-    const n = Math.min(MAX_PARTICLES, curves.edgeCount * perEdge)
+    const perEdge = Math.max(1, Math.min(2, Math.floor(MAX_HEADS / Math.max(1, curves.edgeCount))))
+    const n = Math.min(MAX_HEADS, curves.edgeCount * perEdge)
     const edgeOf = new Uint32Array(n)
     const phase = new Float32Array(n)
     const speed = new Float32Array(n)
@@ -42,8 +46,8 @@ export function Particles({ layout, curves, focusSet }: ParticlesProps) {
       edgeOf,
       phase,
       speed,
-      positions: new Float32Array(n * 3),
-      colors: new Float32Array(n * 3),
+      positions: new Float32Array(n * TRAIL * 3),
+      colors: new Float32Array(n * TRAIL * 3),
     }
   }, [curves])
 
@@ -56,9 +60,12 @@ export function Particles({ layout, curves, focusSet }: ParticlesProps) {
       c.copy(languageColor(layout.byId.get(edge.target)!.language))
       c.lerp(new THREE.Color('#ffffff'), 0.35)
       c.multiplyScalar(focusSet ? (touching ? 1.6 : 0) : 0.85)
-      colors[i * 3] = c.r
-      colors[i * 3 + 1] = c.g
-      colors[i * 3 + 2] = c.b
+      for (let t = 0; t < TRAIL; t += 1) {
+        const o = (i * TRAIL + t) * 3
+        colors[o] = c.r * TRAIL_FADE[t]
+        colors[o + 1] = c.g * TRAIL_FADE[t]
+        colors[o + 2] = c.b * TRAIL_FADE[t]
+      }
     }
     const attr = geometryRef.current.getAttribute('color') as THREE.BufferAttribute
     if (attr) attr.needsUpdate = true
@@ -69,28 +76,33 @@ export function Particles({ layout, curves, focusSet }: ParticlesProps) {
     const dt = Math.min(delta, 0.05)
     for (let i = 0; i < count; i += 1) {
       phase[i] = (phase[i] + dt * speed[i]) % 1
-      const f = phase[i] * CURVE_SEGMENTS
-      const seg = Math.min(CURVE_SEGMENTS - 1, Math.floor(f))
-      const frac = f - seg
-      const o = edgeOf[i] * stride + seg * 3
-      positions[i * 3] = curves.points[o] + (curves.points[o + 3] - curves.points[o]) * frac
-      positions[i * 3 + 1] =
-        curves.points[o + 1] + (curves.points[o + 4] - curves.points[o + 1]) * frac
-      positions[i * 3 + 2] =
-        curves.points[o + 2] + (curves.points[o + 5] - curves.points[o + 2]) * frac
+      for (let t = 0; t < TRAIL; t += 1) {
+        const p = phase[i] - t * TRAIL_LAG
+        const clamped = Math.max(0, Math.min(1, p < 0 ? p + 1 : p))
+        const f = clamped * CURVE_SEGMENTS
+        const seg = Math.min(CURVE_SEGMENTS - 1, Math.floor(f))
+        const frac = f - seg
+        const o = edgeOf[i] * stride + seg * 3
+        const w = (i * TRAIL + t) * 3
+        positions[w] = curves.points[o] + (curves.points[o + 3] - curves.points[o]) * frac
+        positions[w + 1] =
+          curves.points[o + 1] + (curves.points[o + 4] - curves.points[o + 1]) * frac
+        positions[w + 2] =
+          curves.points[o + 2] + (curves.points[o + 5] - curves.points[o + 2]) * frac
+      }
     }
     const attr = geometryRef.current.getAttribute('position') as THREE.BufferAttribute
     if (attr) attr.needsUpdate = true
   })
 
   return (
-    <points frustumCulled={false}>
+    <points frustumCulled={false} raycast={() => null}>
       <bufferGeometry ref={geometryRef}>
         <bufferAttribute attach="attributes-position" args={[positions, 3]} />
         <bufferAttribute attach="attributes-color" args={[colors, 3]} />
       </bufferGeometry>
       <pointsMaterial
-        size={1.7}
+        size={1.9}
         map={texture}
         vertexColors
         transparent

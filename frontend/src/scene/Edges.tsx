@@ -56,7 +56,9 @@ export function Edges({ layout, curves, focusSet }: EdgesProps) {
       tc.copy(languageColor(layout.byId.get(edge.target)!.language))
       for (let i = 0; i < CURVE_SEGMENTS; i += 1) {
         for (const frac of [i / CURVE_SEGMENTS, (i + 1) / CURVE_SEGMENTS]) {
-          mixed.copy(sc).lerp(tc, frac).multiplyScalar(brightness)
+          // taper: brightest at mid-arc, fading into the stars at each end
+          const taper = 0.4 + 0.6 * Math.sin(Math.PI * frac)
+          mixed.copy(sc).lerp(tc, frac).multiplyScalar(brightness * taper)
           colors[w++] = mixed.r
           colors[w++] = mixed.g
           colors[w++] = mixed.b

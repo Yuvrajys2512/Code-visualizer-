@@ -1,7 +1,7 @@
-import { Billboard, Text } from '@react-three/drei'
 import { useMemo } from 'react'
 import { languageColorHex } from '../palette'
 import type { Layout, PositionedNode } from '../types'
+import { FadingLabel } from './FadingLabel'
 
 interface LabelsProps {
   layout: Layout
@@ -9,7 +9,7 @@ interface LabelsProps {
   selectedId: string | null
 }
 
-const TOP_N = 14
+const TOP_N = 9
 const MAX_LABELS = 36
 
 /**
@@ -36,20 +36,17 @@ export function Labels({ layout, focusSet, selectedId }: LabelsProps) {
       {labelled.map((node) => {
         const emphasised = node.id === selectedId
         return (
-          <Billboard key={node.id} position={[node.x, node.y + node.radius + 2.2, node.z]}>
-            <Text
-              fontSize={emphasised ? 3.4 : 2.1 + node.significance * 1.1}
-              color={emphasised ? '#ffffff' : languageColorHex(node.language)}
-              fillOpacity={emphasised ? 1 : 0.82}
-              outlineWidth={0.06}
-              outlineColor="#000000"
-              outlineOpacity={0.85}
-              anchorX="center"
-              anchorY="bottom"
-            >
-              {node.name}
-            </Text>
-          </Billboard>
+          <FadingLabel
+            key={node.id}
+            position={[node.x, node.y + node.radius + 2.1, node.z]}
+            text={node.name}
+            fontSize={emphasised ? 2.9 : 1.9 + node.significance * 0.9}
+            color={emphasised ? '#ffffff' : languageColorHex(node.language)}
+            baseOpacity={emphasised ? 1 : 0.8}
+            bold={emphasised}
+            near={node.radius * 6 + 6}
+            far={210}
+          />
         )
       })}
     </>
