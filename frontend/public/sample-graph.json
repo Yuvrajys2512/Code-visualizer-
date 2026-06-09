@@ -6,7 +6,9 @@
       "dir": "backend/app/api",
       "loc": 44,
       "language": "python",
-      "significance": 0.444
+      "significance": 0.444,
+      "role": "module",
+      "description": "Defines get_db, get_current_user, get_current_active_superuser"
     },
     {
       "id": "backend/app/api/main.py",
@@ -14,7 +16,9 @@
       "dir": "backend/app/api",
       "loc": 10,
       "language": "python",
-      "significance": 0.348
+      "significance": 0.348,
+      "role": "entry point",
+      "description": ""
     },
     {
       "id": "backend/app/api/routes/items.py",
@@ -22,7 +26,9 @@
       "dir": "backend/app/api/routes",
       "loc": 98,
       "language": "python",
-      "significance": 0.255
+      "significance": 0.255,
+      "role": "module",
+      "description": "Defines read_items, read_item, create_item, update_item, delete_item"
     },
     {
       "id": "backend/app/api/routes/login.py",
@@ -30,7 +36,9 @@
       "dir": "backend/app/api/routes",
       "loc": 107,
       "language": "python",
-      "significance": 0.326
+      "significance": 0.326,
+      "role": "module",
+      "description": "Defines login_access_token, test_token, recover_password, reset_password, recover_password_html_content"
     },
     {
       "id": "backend/app/api/routes/private.py",
@@ -38,7 +46,9 @@
       "dir": "backend/app/api/routes",
       "loc": 28,
       "language": "python",
-      "significance": 0.278
+      "significance": 0.278,
+      "role": "module",
+      "description": "Defines PrivateUserCreate, create_user"
     },
     {
       "id": "backend/app/api/routes/users.py",
@@ -46,7 +56,9 @@
       "dir": "backend/app/api/routes",
       "loc": 202,
       "language": "python",
-      "significance": 0.326
+      "significance": 0.326,
+      "role": "module",
+      "description": "Defines read_users, create_user, update_user_me, update_password_me, read_user_me"
     },
     {
       "id": "backend/app/api/routes/utils.py",
@@ -54,7 +66,9 @@
       "dir": "backend/app/api/routes",
       "loc": 25,
       "language": "python",
-      "significance": 0.278
+      "significance": 0.278,
+      "role": "module",
+      "description": "Defines test_email, health_check"
     },
     {
       "id": "backend/app/backend_pre_start.py",
@@ -62,7 +76,9 @@
       "dir": "backend/app",
       "loc": 29,
       "language": "python",
-      "significance": 0.269
+      "significance": 0.269,
+      "role": "module",
+      "description": "Defines init, main"
     },
     {
       "id": "backend/app/core/config.py",
@@ -70,7 +86,9 @@
       "dir": "backend/app/core",
       "loc": 100,
       "language": "python",
-      "significance": 0.717
+      "significance": 0.717,
+      "role": "config",
+      "description": "Defines parse_cors, Settings"
     },
     {
       "id": "backend/app/core/db.py",
@@ -78,7 +96,9 @@
       "dir": "backend/app/core",
       "loc": 25,
       "language": "python",
-      "significance": 0.517
+      "significance": 0.517,
+      "role": "module",
+      "description": "Defines init_db"
     },
     {
       "id": "backend/app/core/security.py",
@@ -86,7 +106,9 @@
       "dir": "backend/app/core",
       "loc": 25,
       "language": "python",
-      "significance": 0.543
+      "significance": 0.543,
+      "role": "module",
+      "description": "Defines create_access_token, verify_password, get_password_hash"
     },
     {
       "id": "backend/app/crud.py",
@@ -94,7 +116,9 @@
       "dir": "backend/app",
       "loc": 54,
       "language": "python",
-      "significance": 0.512
+      "significance": 0.512,
+      "role": "module",
+      "description": "Defines create_user, update_user, get_user_by_email, authenticate, create_item"
     },
     {
       "id": "backend/app/initial_data.py",
@@ -102,7 +126,9 @@
       "dir": "backend/app",
       "loc": 14,
       "language": "python",
-      "significance": 0.119
+      "significance": 0.119,
+      "role": "module",
+      "description": "Defines init, main"
     },
     {
       "id": "backend/app/main.py",
@@ -110,7 +136,9 @@
       "dir": "backend/app",
       "loc": 25,
       "language": "python",
-      "significance": 0.248
+      "significance": 0.248,
+      "role": "entry point",
+      "description": "Defines custom_generate_unique_id"
     },
     {
       "id": "backend/app/models.py",
@@ -118,7 +146,9 @@
       "dir": "backend/app",
       "loc": 88,
       "language": "python",
-      "significance": 0.647
+      "significance": 0.647,
+      "role": "core hub",
+      "description": "Defines get_datetime_utc, UserBase, UserCreate, UserRegister, UserUpdate"
     },
     {
       "id": "backend/app/tests_pre_start.py",
@@ -126,7 +156,9 @@
       "dir": "backend/app",
       "loc": 29,
       "language": "python",
-      "significance": 0.269
+      "significance": 0.269,
+      "role": "module",
+      "description": "Defines init, main"
     },
     {
       "id": "backend/app/utils.py",
@@ -134,7 +166,9 @@
       "dir": "backend/app",
       "loc": 104,
       "language": "python",
-      "significance": 0.376
+      "significance": 0.376,
+      "role": "module",
+      "description": "Defines EmailData, render_email_template, send_email, generate_test_email, generate_reset_password_email"
     },
     {
       "id": "backend/tests/api/routes/test_items.py",
@@ -142,7 +176,9 @@
       "dir": "backend/tests/api/routes",
       "loc": 140,
       "language": "python",
-      "significance": 0.165
+      "significance": 0.165,
+      "role": "test",
+      "description": "Defines test_create_item, test_read_item, test_read_item_not_found, test_read_item_not_enough_permissions, test_read_items"
     },
     {
       "id": "backend/tests/api/routes/test_login.py",
@@ -150,7 +186,9 @@
       "dir": "backend/tests/api/routes",
       "loc": 153,
       "language": "python",
-      "significance": 0.277
+      "significance": 0.277,
+      "role": "test",
+      "description": "Defines test_get_access_token, test_get_access_token_incorrect_password, test_use_access_token, test_recovery_password, test_recovery_password_user_not_exits"
     },
     {
       "id": "backend/tests/api/routes/test_private.py",
@@ -158,7 +196,9 @@
       "dir": "backend/tests/api/routes",
       "loc": 19,
       "language": "python",
-      "significance": 0.165
+      "significance": 0.165,
+      "role": "test",
+      "description": "Defines test_create_user"
     },
     {
       "id": "backend/tests/api/routes/test_users.py",
@@ -166,7 +206,9 @@
       "dir": "backend/tests/api/routes",
       "loc": 442,
       "language": "python",
-      "significance": 0.262
+      "significance": 0.262,
+      "role": "test",
+      "description": "Defines test_get_users_superuser_me, test_get_users_normal_user_me, test_create_user_new_email, test_get_existing_user_as_superuser, test_get_non_existing_user_as_superuser"
     },
     {
       "id": "backend/tests/conftest.py",
@@ -174,7 +216,9 @@
       "dir": "backend/tests",
       "loc": 32,
       "language": "python",
-      "significance": 0.262
+      "significance": 0.262,
+      "role": "test",
+      "description": "Defines db, client, superuser_token_headers, normal_user_token_headers"
     },
     {
       "id": "backend/tests/crud/test_user.py",
@@ -182,7 +226,9 @@
       "dir": "backend/tests/crud",
       "loc": 102,
       "language": "python",
-      "significance": 0.224
+      "significance": 0.224,
+      "role": "test",
+      "description": "Defines test_create_user, test_authenticate_user, test_not_authenticate_user, test_check_if_user_is_active, test_check_if_user_is_active_inactive"
     },
     {
       "id": "backend/tests/scripts/test_backend_pre_start.py",
@@ -190,7 +236,9 @@
       "dir": "backend/tests/scripts",
       "loc": 24,
       "language": "python",
-      "significance": 0.119
+      "significance": 0.119,
+      "role": "test",
+      "description": "Defines test_init_successful_connection"
     },
     {
       "id": "backend/tests/scripts/test_test_pre_start.py",
@@ -198,7 +246,9 @@
       "dir": "backend/tests/scripts",
       "loc": 24,
       "language": "python",
-      "significance": 0.119
+      "significance": 0.119,
+      "role": "test",
+      "description": "Defines test_init_successful_connection"
     },
     {
       "id": "backend/tests/utils/item.py",
@@ -206,7 +256,9 @@
       "dir": "backend/tests/utils",
       "loc": 13,
       "language": "python",
-      "significance": 0.314
+      "significance": 0.314,
+      "role": "test",
+      "description": "Defines create_random_item"
     },
     {
       "id": "backend/tests/utils/user.py",
@@ -214,7 +266,9 @@
       "dir": "backend/tests/utils",
       "loc": 39,
       "language": "python",
-      "significance": 0.393
+      "significance": 0.393,
+      "role": "test",
+      "description": "Defines user_authentication_headers, create_random_user, authentication_token_from_email"
     },
     {
       "id": "backend/tests/utils/utils.py",
@@ -222,7 +276,9 @@
       "dir": "backend/tests/utils",
       "loc": 18,
       "language": "python",
-      "significance": 0.421
+      "significance": 0.421,
+      "role": "test",
+      "description": "Defines random_lower_string, random_email, get_superuser_token_headers"
     },
     {
       "id": "frontend/openapi-ts.config.ts",
@@ -230,7 +286,9 @@
       "dir": "frontend",
       "loc": 29,
       "language": "typescript",
-      "significance": 0.04
+      "significance": 0.04,
+      "role": "isolated",
+      "description": ""
     },
     {
       "id": "frontend/playwright.config.ts",
@@ -238,7 +296,9 @@
       "dir": "frontend",
       "loc": 81,
       "language": "typescript",
-      "significance": 0.04
+      "significance": 0.04,
+      "role": "isolated",
+      "description": ""
     },
     {
       "id": "frontend/src/client/core/ApiError.ts",
@@ -246,7 +306,9 @@
       "dir": "frontend/src/client/core",
       "loc": 18,
       "language": "typescript",
-      "significance": 0.373
+      "significance": 0.373,
+      "role": "module",
+      "description": "Defines ApiError"
     },
     {
       "id": "frontend/src/client/core/ApiRequestOptions.ts",
@@ -254,7 +316,9 @@
       "dir": "frontend/src/client/core",
       "loc": 21,
       "language": "typescript",
-      "significance": 0.431
+      "significance": 0.431,
+      "role": "module",
+      "description": "Defines ApiRequestOptions"
     },
     {
       "id": "frontend/src/client/core/ApiResult.ts",
@@ -262,7 +326,9 @@
       "dir": "frontend/src/client/core",
       "loc": 7,
       "language": "typescript",
-      "significance": 0.314
+      "significance": 0.314,
+      "role": "module",
+      "description": "Defines ApiResult"
     },
     {
       "id": "frontend/src/client/core/CancelablePromise.ts",
@@ -270,7 +336,9 @@
       "dir": "frontend/src/client/core",
       "loc": 108,
       "language": "typescript",
-      "significance": 0.382
+      "significance": 0.382,
+      "role": "module",
+      "description": "Defines CancelError, OnCancel, CancelablePromise"
     },
     {
       "id": "frontend/src/client/core/OpenAPI.ts",
@@ -278,7 +346,9 @@
       "dir": "frontend/src/client/core",
       "loc": 50,
       "language": "typescript",
-      "significance": 0.401
+      "significance": 0.401,
+      "role": "module",
+      "description": "Defines Interceptors, OpenAPIConfig, OpenAPI"
     },
     {
       "id": "frontend/src/client/core/request.ts",
@@ -286,7 +356,9 @@
       "dir": "frontend/src/client/core",
       "loc": 299,
       "language": "typescript",
-      "significance": 0.339
+      "significance": 0.339,
+      "role": "module",
+      "description": "Defines isString, isStringWithValue, isBlob, isFormData, isSuccess"
     },
     {
       "id": "frontend/src/client/index.ts",
@@ -294,7 +366,9 @@
       "dir": "frontend/src/client",
       "loc": 6,
       "language": "typescript",
-      "significance": 0.731
+      "significance": 0.731,
+      "role": "core hub",
+      "description": ""
     },
     {
       "id": "frontend/src/client/schemas.gen.ts",
@@ -302,7 +376,9 @@
       "dir": "frontend/src/client",
       "loc": 541,
       "language": "typescript",
-      "significance": 0.04
+      "significance": 0.04,
+      "role": "isolated",
+      "description": "Defines Body_login_login_access_tokenSchema, HTTPValidationErrorSchema, ItemCreateSchema, ItemPublicSchema, ItemUpdateSchema"
     },
     {
       "id": "frontend/src/client/sdk.gen.ts",
@@ -310,7 +386,9 @@
       "dir": "frontend/src/client",
       "loc": 444,
       "language": "typescript",
-      "significance": 0.371
+      "significance": 0.371,
+      "role": "module",
+      "description": "Defines ItemsService, LoginService, PrivateService, UsersService, UtilsService"
     },
     {
       "id": "frontend/src/client/types.gen.ts",
@@ -318,7 +396,9 @@
       "dir": "frontend/src/client",
       "loc": 180,
       "language": "typescript",
-      "significance": 0.338
+      "significance": 0.338,
+      "role": "module",
+      "description": "Defines Body_login_login_access_token, HTTPValidationError, ItemCreate, ItemPublic, ItemsPublic"
     },
     {
       "id": "frontend/src/components/Admin/AddUser.tsx",
@@ -326,7 +406,9 @@
       "dir": "frontend/src/components/Admin",
       "loc": 223,
       "language": "typescript",
-      "significance": 0.355
+      "significance": 0.355,
+      "role": "orchestrator",
+      "description": ""
     },
     {
       "id": "frontend/src/components/Admin/DeleteUser.tsx",
@@ -334,7 +416,9 @@
       "dir": "frontend/src/components/Admin",
       "loc": 86,
       "language": "typescript",
-      "significance": 0.336
+      "significance": 0.336,
+      "role": "orchestrator",
+      "description": ""
     },
     {
       "id": "frontend/src/components/Admin/EditUser.tsx",
@@ -342,7 +426,9 @@
       "dir": "frontend/src/components/Admin",
       "loc": 223,
       "language": "typescript",
-      "significance": 0.367
+      "significance": 0.367,
+      "role": "orchestrator",
+      "description": ""
     },
     {
       "id": "frontend/src/components/Admin/UserActionsMenu.tsx",
@@ -350,7 +436,9 @@
       "dir": "frontend/src/components/Admin",
       "loc": 35,
       "language": "typescript",
-      "significance": 0.33
+      "significance": 0.33,
+      "role": "module",
+      "description": "Defines UserActionsMenu"
     },
     {
       "id": "frontend/src/components/Admin/columns.tsx",
@@ -358,7 +446,9 @@
       "dir": "frontend/src/components/Admin",
       "loc": 73,
       "language": "typescript",
-      "significance": 0.291
+      "significance": 0.291,
+      "role": "module",
+      "description": "Defines UserTableData, columns"
     },
     {
       "id": "frontend/src/components/Common/Appearance.tsx",
@@ -366,7 +456,9 @@
       "dir": "frontend/src/components/Common",
       "loc": 98,
       "language": "typescript",
-      "significance": 0.35
+      "significance": 0.35,
+      "role": "module",
+      "description": "Defines SidebarAppearance, Appearance"
     },
     {
       "id": "frontend/src/components/Common/AuthLayout.tsx",
@@ -374,7 +466,9 @@
       "dir": "frontend/src/components/Common",
       "loc": 24,
       "language": "typescript",
-      "significance": 0.372
+      "significance": 0.372,
+      "role": "module",
+      "description": "Defines AuthLayout"
     },
     {
       "id": "frontend/src/components/Common/DataTable.tsx",
@@ -382,7 +476,9 @@
       "dir": "frontend/src/components/Common",
       "loc": 187,
       "language": "typescript",
-      "significance": 0.318
+      "significance": 0.318,
+      "role": "module",
+      "description": "Defines DataTable"
     },
     {
       "id": "frontend/src/components/Common/ErrorComponent.tsx",
@@ -390,7 +486,9 @@
       "dir": "frontend/src/components/Common",
       "loc": 26,
       "language": "typescript",
-      "significance": 0.247
+      "significance": 0.247,
+      "role": "module",
+      "description": ""
     },
     {
       "id": "frontend/src/components/Common/Footer.tsx",
@@ -398,7 +496,9 @@
       "dir": "frontend/src/components/Common",
       "loc": 41,
       "language": "typescript",
-      "significance": 0.277
+      "significance": 0.277,
+      "role": "module",
+      "description": "Defines Footer"
     },
     {
       "id": "frontend/src/components/Common/Logo.tsx",
@@ -406,7 +506,9 @@
       "dir": "frontend/src/components/Common",
       "loc": 53,
       "language": "typescript",
-      "significance": 0.318
+      "significance": 0.318,
+      "role": "module",
+      "description": "Defines Logo"
     },
     {
       "id": "frontend/src/components/Common/NotFound.tsx",
@@ -414,7 +516,9 @@
       "dir": "frontend/src/components/Common",
       "loc": 28,
       "language": "typescript",
-      "significance": 0.247
+      "significance": 0.247,
+      "role": "module",
+      "description": ""
     },
     {
       "id": "frontend/src/components/Items/AddItem.tsx",
@@ -422,7 +526,9 @@
       "dir": "frontend/src/components/Items",
       "loc": 133,
       "language": "typescript",
-      "significance": 0.348
+      "significance": 0.348,
+      "role": "orchestrator",
+      "description": ""
     },
     {
       "id": "frontend/src/components/Items/DeleteItem.tsx",
@@ -430,7 +536,9 @@
       "dir": "frontend/src/components/Items",
       "loc": 85,
       "language": "typescript",
-      "significance": 0.338
+      "significance": 0.338,
+      "role": "orchestrator",
+      "description": ""
     },
     {
       "id": "frontend/src/components/Items/EditItem.tsx",
@@ -438,7 +546,9 @@
       "dir": "frontend/src/components/Items",
       "loc": 133,
       "language": "typescript",
-      "significance": 0.36
+      "significance": 0.36,
+      "role": "orchestrator",
+      "description": ""
     },
     {
       "id": "frontend/src/components/Items/ItemActionsMenu.tsx",
@@ -446,7 +556,9 @@
       "dir": "frontend/src/components/Items",
       "loc": 30,
       "language": "typescript",
-      "significance": 0.312
+      "significance": 0.312,
+      "role": "module",
+      "description": "Defines ItemActionsMenu"
     },
     {
       "id": "frontend/src/components/Items/columns.tsx",
@@ -454,7 +566,9 @@
       "dir": "frontend/src/components/Items",
       "loc": 69,
       "language": "typescript",
-      "significance": 0.31
+      "significance": 0.31,
+      "role": "module",
+      "description": "Defines columns"
     },
     {
       "id": "frontend/src/components/Pending/PendingItems.tsx",
@@ -462,7 +576,9 @@
       "dir": "frontend/src/components/Pending",
       "loc": 44,
       "language": "typescript",
-      "significance": 0.253
+      "significance": 0.253,
+      "role": "module",
+      "description": ""
     },
     {
       "id": "frontend/src/components/Pending/PendingUsers.tsx",
@@ -470,7 +586,9 @@
       "dir": "frontend/src/components/Pending",
       "loc": 51,
       "language": "typescript",
-      "significance": 0.249
+      "significance": 0.249,
+      "role": "module",
+      "description": ""
     },
     {
       "id": "frontend/src/components/Sidebar/AppSidebar.tsx",
@@ -478,7 +596,9 @@
       "dir": "frontend/src/components/Sidebar",
       "loc": 37,
       "language": "typescript",
-      "significance": 0.329
+      "significance": 0.329,
+      "role": "module",
+      "description": "Defines AppSidebar"
     },
     {
       "id": "frontend/src/components/Sidebar/Main.tsx",
@@ -486,7 +606,9 @@
       "dir": "frontend/src/components/Sidebar",
       "loc": 53,
       "language": "typescript",
-      "significance": 0.224
+      "significance": 0.224,
+      "role": "module",
+      "description": "Defines Item, Main"
     },
     {
       "id": "frontend/src/components/Sidebar/User.tsx",
@@ -494,7 +616,9 @@
       "dir": "frontend/src/components/Sidebar",
       "loc": 90,
       "language": "typescript",
-      "significance": 0.309
+      "significance": 0.309,
+      "role": "module",
+      "description": "Defines User"
     },
     {
       "id": "frontend/src/components/UserSettings/ChangePassword.tsx",
@@ -502,7 +626,9 @@
       "dir": "frontend/src/components/UserSettings",
       "loc": 135,
       "language": "typescript",
-      "significance": 0.324
+      "significance": 0.324,
+      "role": "module",
+      "description": ""
     },
     {
       "id": "frontend/src/components/UserSettings/DeleteAccount.tsx",
@@ -510,7 +636,9 @@
       "dir": "frontend/src/components/UserSettings",
       "loc": 13,
       "language": "typescript",
-      "significance": 0.225
+      "significance": 0.225,
+      "role": "module",
+      "description": ""
     },
     {
       "id": "frontend/src/components/UserSettings/DeleteConfirmation.tsx",
@@ -518,7 +646,9 @@
       "dir": "frontend/src/components/UserSettings",
       "loc": 75,
       "language": "typescript",
-      "significance": 0.388
+      "significance": 0.388,
+      "role": "orchestrator",
+      "description": ""
     },
     {
       "id": "frontend/src/components/UserSettings/UserInformation.tsx",
@@ -526,7 +656,9 @@
       "dir": "frontend/src/components/UserSettings",
       "loc": 156,
       "language": "typescript",
-      "significance": 0.358
+      "significance": 0.358,
+      "role": "orchestrator",
+      "description": ""
     },
     {
       "id": "frontend/src/components/theme-provider.tsx",
@@ -534,7 +666,9 @@
       "dir": "frontend/src/components",
       "loc": 92,
       "language": "typescript",
-      "significance": 0.34
+      "significance": 0.34,
+      "role": "module",
+      "description": "Defines Theme, ThemeProvider, useTheme"
     },
     {
       "id": "frontend/src/components/ui/alert.tsx",
@@ -542,7 +676,9 @@
       "dir": "frontend/src/components/ui",
       "loc": 60,
       "language": "typescript",
-      "significance": 0.119
+      "significance": 0.119,
+      "role": "module",
+      "description": ""
     },
     {
       "id": "frontend/src/components/ui/avatar.tsx",
@@ -550,7 +686,9 @@
       "dir": "frontend/src/components/ui",
       "loc": 46,
       "language": "typescript",
-      "significance": 0.226
+      "significance": 0.226,
+      "role": "module",
+      "description": ""
     },
     {
       "id": "frontend/src/components/ui/badge.tsx",
@@ -558,7 +696,9 @@
       "dir": "frontend/src/components/ui",
       "loc": 41,
       "language": "typescript",
-      "significance": 0.231
+      "significance": 0.231,
+      "role": "module",
+      "description": ""
     },
     {
       "id": "frontend/src/components/ui/button-group.tsx",
@@ -566,7 +706,9 @@
       "dir": "frontend/src/components/ui",
       "loc": 76,
       "language": "typescript",
-      "significance": 0.165
+      "significance": 0.165,
+      "role": "module",
+      "description": ""
     },
     {
       "id": "frontend/src/components/ui/button.tsx",
@@ -574,7 +716,9 @@
       "dir": "frontend/src/components/ui",
       "loc": 55,
       "language": "typescript",
-      "significance": 0.656
+      "significance": 0.656,
+      "role": "core hub",
+      "description": ""
     },
     {
       "id": "frontend/src/components/ui/card.tsx",
@@ -582,7 +726,9 @@
       "dir": "frontend/src/components/ui",
       "loc": 83,
       "language": "typescript",
-      "significance": 0.119
+      "significance": 0.119,
+      "role": "module",
+      "description": ""
     },
     {
       "id": "frontend/src/components/ui/checkbox.tsx",
@@ -590,7 +736,9 @@
       "dir": "frontend/src/components/ui",
       "loc": 27,
       "language": "typescript",
-      "significance": 0.269
+      "significance": 0.269,
+      "role": "module",
+      "description": ""
     },
     {
       "id": "frontend/src/components/ui/dialog.tsx",
@@ -598,7 +746,9 @@
       "dir": "frontend/src/components/ui",
       "loc": 129,
       "language": "typescript",
-      "significance": 0.423
+      "significance": 0.423,
+      "role": "module",
+      "description": ""
     },
     {
       "id": "frontend/src/components/ui/dropdown-menu.tsx",
@@ -606,7 +756,9 @@
       "dir": "frontend/src/components/ui",
       "loc": 239,
       "language": "typescript",
-      "significance": 0.454
+      "significance": 0.454,
+      "role": "module",
+      "description": ""
     },
     {
       "id": "frontend/src/components/ui/form.tsx",
@@ -614,7 +766,9 @@
       "dir": "frontend/src/components/ui",
       "loc": 142,
       "language": "typescript",
-      "significance": 0.476
+      "significance": 0.476,
+      "role": "core hub",
+      "description": ""
     },
     {
       "id": "frontend/src/components/ui/input.tsx",
@@ -622,7 +776,9 @@
       "dir": "frontend/src/components/ui",
       "loc": 18,
       "language": "typescript",
-      "significance": 0.461
+      "significance": 0.461,
+      "role": "module",
+      "description": ""
     },
     {
       "id": "frontend/src/components/ui/label.tsx",
@@ -630,7 +786,9 @@
       "dir": "frontend/src/components/ui",
       "loc": 20,
       "language": "typescript",
-      "significance": 0.274
+      "significance": 0.274,
+      "role": "module",
+      "description": ""
     },
     {
       "id": "frontend/src/components/ui/loading-button.tsx",
@@ -638,7 +796,9 @@
       "dir": "frontend/src/components/ui",
       "loc": 63,
       "language": "typescript",
-      "significance": 0.516
+      "significance": 0.516,
+      "role": "core hub",
+      "description": "Defines ButtonProps"
     },
     {
       "id": "frontend/src/components/ui/pagination.tsx",
@@ -646,7 +806,9 @@
       "dir": "frontend/src/components/ui",
       "loc": 117,
       "language": "typescript",
-      "significance": 0.165
+      "significance": 0.165,
+      "role": "module",
+      "description": ""
     },
     {
       "id": "frontend/src/components/ui/password-input.tsx",
@@ -654,7 +816,9 @@
       "dir": "frontend/src/components/ui",
       "loc": 45,
       "language": "typescript",
-      "significance": 0.364
+      "significance": 0.364,
+      "role": "module",
+      "description": ""
     },
     {
       "id": "frontend/src/components/ui/select.tsx",
@@ -662,7 +826,9 @@
       "dir": "frontend/src/components/ui",
       "loc": 173,
       "language": "typescript",
-      "significance": 0.241
+      "significance": 0.241,
+      "role": "module",
+      "description": ""
     },
     {
       "id": "frontend/src/components/ui/separator.tsx",
@@ -670,7 +836,9 @@
       "dir": "frontend/src/components/ui",
       "loc": 23,
       "language": "typescript",
-      "significance": 0.305
+      "significance": 0.305,
+      "role": "module",
+      "description": ""
     },
     {
       "id": "frontend/src/components/ui/sheet.tsx",
@@ -678,7 +846,9 @@
       "dir": "frontend/src/components/ui",
       "loc": 126,
       "language": "typescript",
-      "significance": 0.236
+      "significance": 0.236,
+      "role": "module",
+      "description": ""
     },
     {
       "id": "frontend/src/components/ui/sidebar.tsx",
@@ -686,7 +856,9 @@
       "dir": "frontend/src/components/ui",
       "loc": 680,
       "language": "typescript",
-      "significance": 0.488
+      "significance": 0.488,
+      "role": "orchestrator",
+      "description": ""
     },
     {
       "id": "frontend/src/components/ui/skeleton.tsx",
@@ -694,7 +866,9 @@
       "dir": "frontend/src/components/ui",
       "loc": 11,
       "language": "typescript",
-      "significance": 0.361
+      "significance": 0.361,
+      "role": "module",
+      "description": ""
     },
     {
       "id": "frontend/src/components/ui/sonner.tsx",
@@ -702,7 +876,9 @@
       "dir": "frontend/src/components/ui",
       "loc": 36,
       "language": "typescript",
-      "significance": 0.19
+      "significance": 0.19,
+      "role": "module",
+      "description": ""
     },
     {
       "id": "frontend/src/components/ui/table.tsx",
@@ -710,7 +886,9 @@
       "dir": "frontend/src/components/ui",
       "loc": 104,
       "language": "typescript",
-      "significance": 0.364
+      "significance": 0.364,
+      "role": "module",
+      "description": ""
     },
     {
       "id": "frontend/src/components/ui/tabs.tsx",
@@ -718,7 +896,9 @@
       "dir": "frontend/src/components/ui",
       "loc": 58,
       "language": "typescript",
-      "significance": 0.225
+      "significance": 0.225,
+      "role": "module",
+      "description": ""
     },
     {
       "id": "frontend/src/components/ui/tooltip.tsx",
@@ -726,7 +906,9 @@
       "dir": "frontend/src/components/ui",
       "loc": 53,
       "language": "typescript",
-      "significance": 0.236
+      "significance": 0.236,
+      "role": "module",
+      "description": ""
     },
     {
       "id": "frontend/src/hooks/useAuth.ts",
@@ -734,7 +916,9 @@
       "dir": "frontend/src/hooks",
       "loc": 60,
       "language": "typescript",
-      "significance": 0.56
+      "significance": 0.56,
+      "role": "core hub",
+      "description": ""
     },
     {
       "id": "frontend/src/hooks/useCopyToClipboard.ts",
@@ -742,7 +926,9 @@
       "dir": "frontend/src/hooks",
       "loc": 24,
       "language": "typescript",
-      "significance": 0.189
+      "significance": 0.189,
+      "role": "module",
+      "description": "source: https://usehooks-ts.com/react-hook/use-copy-to-clipboard"
     },
     {
       "id": "frontend/src/hooks/useCustomToast.ts",
@@ -750,7 +936,9 @@
       "dir": "frontend/src/hooks",
       "loc": 15,
       "language": "typescript",
-      "significance": 0.528
+      "significance": 0.528,
+      "role": "core hub",
+      "description": ""
     },
     {
       "id": "frontend/src/hooks/useMobile.ts",
@@ -758,7 +946,9 @@
       "dir": "frontend/src/hooks",
       "loc": 15,
       "language": "typescript",
-      "significance": 0.199
+      "significance": 0.199,
+      "role": "module",
+      "description": "Defines useIsMobile"
     },
     {
       "id": "frontend/src/lib/utils.ts",
@@ -766,7 +956,9 @@
       "dir": "frontend/src/lib",
       "loc": 5,
       "language": "typescript",
-      "significance": 1.0
+      "significance": 1.0,
+      "role": "core hub",
+      "description": "Defines cn"
     },
     {
       "id": "frontend/src/main.tsx",
@@ -774,7 +966,9 @@
       "dir": "frontend/src",
       "loc": 48,
       "language": "typescript",
-      "significance": 0.224
+      "significance": 0.224,
+      "role": "entry point",
+      "description": ""
     },
     {
       "id": "frontend/src/routeTree.gen.ts",
@@ -782,7 +976,9 @@
       "dir": "frontend/src",
       "loc": 224,
       "language": "typescript",
-      "significance": 0.37
+      "significance": 0.37,
+      "role": "orchestrator",
+      "description": "Defines FileRoutesByFullPath, FileRoutesByTo, FileRoutesById, FileRouteTypes, RootRouteChildren"
     },
     {
       "id": "frontend/src/routes/__root.tsx",
@@ -790,7 +986,9 @@
       "dir": "frontend/src/routes",
       "loc": 17,
       "language": "typescript",
-      "significance": 0.243
+      "significance": 0.243,
+      "role": "module",
+      "description": "Defines Route"
     },
     {
       "id": "frontend/src/routes/_layout.tsx",
@@ -798,7 +996,9 @@
       "dir": "frontend/src/routes",
       "loc": 38,
       "language": "typescript",
-      "significance": 0.284
+      "significance": 0.284,
+      "role": "module",
+      "description": "Defines Route"
     },
     {
       "id": "frontend/src/routes/_layout/admin.tsx",
@@ -806,7 +1006,9 @@
       "dir": "frontend/src/routes/_layout",
       "loc": 65,
       "language": "typescript",
-      "significance": 0.314
+      "significance": 0.314,
+      "role": "module",
+      "description": "Defines Route"
     },
     {
       "id": "frontend/src/routes/_layout/index.tsx",
@@ -814,7 +1016,9 @@
       "dir": "frontend/src/routes/_layout",
       "loc": 27,
       "language": "typescript",
-      "significance": 0.215
+      "significance": 0.215,
+      "role": "module",
+      "description": "Defines Route"
     },
     {
       "id": "frontend/src/routes/_layout/items.tsx",
@@ -822,7 +1026,9 @@
       "dir": "frontend/src/routes/_layout",
       "loc": 61,
       "language": "typescript",
-      "significance": 0.3
+      "significance": 0.3,
+      "role": "module",
+      "description": "Defines Route"
     },
     {
       "id": "frontend/src/routes/_layout/settings.tsx",
@@ -830,7 +1036,9 @@
       "dir": "frontend/src/routes/_layout",
       "loc": 54,
       "language": "typescript",
-      "significance": 0.3
+      "significance": 0.3,
+      "role": "config",
+      "description": "Defines Route"
     },
     {
       "id": "frontend/src/routes/login.tsx",
@@ -838,7 +1046,9 @@
       "dir": "frontend/src/routes",
       "loc": 131,
       "language": "typescript",
-      "significance": 0.327
+      "significance": 0.327,
+      "role": "orchestrator",
+      "description": "Defines Route"
     },
     {
       "id": "frontend/src/routes/recover-password.tsx",
@@ -846,7 +1056,9 @@
       "dir": "frontend/src/routes",
       "loc": 118,
       "language": "typescript",
-      "significance": 0.338
+      "significance": 0.338,
+      "role": "orchestrator",
+      "description": "Defines Route"
     },
     {
       "id": "frontend/src/routes/reset-password.tsx",
@@ -854,7 +1066,9 @@
       "dir": "frontend/src/routes",
       "loc": 152,
       "language": "typescript",
-      "significance": 0.338
+      "significance": 0.338,
+      "role": "orchestrator",
+      "description": "Defines Route"
     },
     {
       "id": "frontend/src/routes/signup.tsx",
@@ -862,7 +1076,9 @@
       "dir": "frontend/src/routes",
       "loc": 175,
       "language": "typescript",
-      "significance": 0.314
+      "significance": 0.314,
+      "role": "module",
+      "description": "Defines Route"
     },
     {
       "id": "frontend/src/utils.ts",
@@ -870,7 +1086,9 @@
       "dir": "frontend/src",
       "loc": 27,
       "language": "typescript",
-      "significance": 0.547
+      "significance": 0.547,
+      "role": "core hub",
+      "description": "Defines handleError, getInitials"
     },
     {
       "id": "frontend/tests/admin.spec.ts",
@@ -878,7 +1096,9 @@
       "dir": "frontend/tests",
       "loc": 145,
       "language": "typescript",
-      "significance": 0.224
+      "significance": 0.224,
+      "role": "test",
+      "description": ""
     },
     {
       "id": "frontend/tests/auth.setup.ts",
@@ -886,7 +1106,9 @@
       "dir": "frontend/tests",
       "loc": 11,
       "language": "typescript",
-      "significance": 0.119
+      "significance": 0.119,
+      "role": "test",
+      "description": ""
     },
     {
       "id": "frontend/tests/config.ts",
@@ -894,7 +1116,9 @@
       "dir": "frontend/tests",
       "loc": 15,
       "language": "typescript",
-      "significance": 0.385
+      "significance": 0.385,
+      "role": "test",
+      "description": "Defines firstSuperuser, firstSuperuserPassword"
     },
     {
       "id": "frontend/tests/items.spec.ts",
@@ -902,7 +1126,9 @@
       "dir": "frontend/tests",
       "loc": 104,
       "language": "typescript",
-      "significance": 0.198
+      "significance": 0.198,
+      "role": "test",
+      "description": ""
     },
     {
       "id": "frontend/tests/login.spec.ts",
@@ -910,7 +1136,9 @@
       "dir": "frontend/tests",
       "loc": 86,
       "language": "typescript",
-      "significance": 0.165
+      "significance": 0.165,
+      "role": "test",
+      "description": ""
     },
     {
       "id": "frontend/tests/reset-password.spec.ts",
@@ -918,7 +1146,9 @@
       "dir": "frontend/tests",
       "loc": 94,
       "language": "typescript",
-      "significance": 0.198
+      "significance": 0.198,
+      "role": "test",
+      "description": ""
     },
     {
       "id": "frontend/tests/sign-up.spec.ts",
@@ -926,7 +1156,9 @@
       "dir": "frontend/tests",
       "loc": 118,
       "language": "typescript",
-      "significance": 0.119
+      "significance": 0.119,
+      "role": "test",
+      "description": ""
     },
     {
       "id": "frontend/tests/user-settings.spec.ts",
@@ -934,7 +1166,9 @@
       "dir": "frontend/tests",
       "loc": 206,
       "language": "typescript",
-      "significance": 0.224
+      "significance": 0.224,
+      "role": "test",
+      "description": ""
     },
     {
       "id": "frontend/tests/utils/mailcatcher.ts",
@@ -942,7 +1176,9 @@
       "dir": "frontend/tests/utils",
       "loc": 51,
       "language": "typescript",
-      "significance": 0.197
+      "significance": 0.197,
+      "role": "test",
+      "description": "Defines findLastEmail"
     },
     {
       "id": "frontend/tests/utils/privateApi.ts",
@@ -950,7 +1186,9 @@
       "dir": "frontend/tests/utils",
       "loc": 20,
       "language": "typescript",
-      "significance": 0.334
+      "significance": 0.334,
+      "role": "test",
+      "description": "Note: the `PrivateService` is only available when generating the client for local environments"
     },
     {
       "id": "frontend/tests/utils/random.ts",
@@ -958,7 +1196,9 @@
       "dir": "frontend/tests/utils",
       "loc": 14,
       "language": "typescript",
-      "significance": 0.444
+      "significance": 0.444,
+      "role": "test",
+      "description": "Defines randomEmail, randomTeamName, randomPassword, slugify, randomItemTitle"
     },
     {
       "id": "frontend/tests/utils/user.ts",
@@ -966,7 +1206,9 @@
       "dir": "frontend/tests/utils",
       "loc": 30,
       "language": "typescript",
-      "significance": 0.358
+      "significance": 0.358,
+      "role": "test",
+      "description": "Defines signUpNewUser, logInUser, logOutUser"
     },
     {
       "id": "frontend/vite.config.ts",
@@ -974,7 +1216,9 @@
       "dir": "frontend",
       "loc": 21,
       "language": "typescript",
-      "significance": 0.04
+      "significance": 0.04,
+      "role": "isolated",
+      "description": ""
     },
     {
       "id": "hooks/post_gen_project.py",
@@ -982,7 +1226,9 @@
       "dir": "hooks",
       "loc": 6,
       "language": "python",
-      "significance": 0.04
+      "significance": 0.04,
+      "role": "isolated",
+      "description": ""
     },
     {
       "id": "scripts/add_latest_release_date.py",
@@ -990,7 +1236,9 @@
       "dir": "scripts",
       "loc": 28,
       "language": "python",
-      "significance": 0.04
+      "significance": 0.04,
+      "role": "isolated",
+      "description": "Check release-notes.md and add today's date to the latest release header if missing."
     }
   ],
   "edges": [
@@ -2713,6 +2961,152 @@
       "source": "frontend/tests/utils/privateApi.ts",
       "target": "frontend/src/client/index.ts",
       "type": "import"
+    }
+  ],
+  "clusters": [
+    {
+      "dir": "frontend/src/components/ui",
+      "label": "ui",
+      "kind": "UI components",
+      "description": "24 typescript files \u00b7 UI components \u00b7 anchored by button.tsx",
+      "count": 24,
+      "language": "typescript",
+      "anchor": "frontend/src/components/ui/button.tsx"
+    },
+    {
+      "dir": "frontend/tests",
+      "label": "tests",
+      "kind": "tests",
+      "description": "8 typescript files \u00b7 tests \u00b7 anchored by config.ts",
+      "count": 8,
+      "language": "typescript",
+      "anchor": "frontend/tests/config.ts"
+    },
+    {
+      "dir": "backend/app",
+      "label": "app",
+      "kind": "API endpoints",
+      "description": "7 python files \u00b7 API endpoints \u00b7 anchored by models.py",
+      "count": 7,
+      "language": "python",
+      "anchor": "backend/app/models.py"
+    },
+    {
+      "dir": "frontend/src/components/Common",
+      "label": "Common",
+      "kind": "UI components",
+      "description": "7 typescript files \u00b7 UI components \u00b7 anchored by AuthLayout.tsx",
+      "count": 7,
+      "language": "typescript",
+      "anchor": "frontend/src/components/Common/AuthLayout.tsx"
+    },
+    {
+      "dir": "frontend/src/client/core",
+      "label": "core",
+      "kind": "core infrastructure",
+      "description": "6 typescript files \u00b7 core infrastructure \u00b7 anchored by ApiRequestOptions.ts",
+      "count": 6,
+      "language": "typescript",
+      "anchor": "frontend/src/client/core/ApiRequestOptions.ts"
+    },
+    {
+      "dir": "frontend/src/routes",
+      "label": "routes",
+      "kind": "pages & views",
+      "description": "6 typescript files \u00b7 pages & views \u00b7 anchored by recover-password.tsx",
+      "count": 6,
+      "language": "typescript",
+      "anchor": "frontend/src/routes/recover-password.tsx"
+    },
+    {
+      "dir": "backend/app/api/routes",
+      "label": "api/routes",
+      "kind": "API endpoints",
+      "description": "5 python files \u00b7 API endpoints \u00b7 anchored by login.py",
+      "count": 5,
+      "language": "python",
+      "anchor": "backend/app/api/routes/login.py"
+    },
+    {
+      "dir": "frontend/src/components/Admin",
+      "label": "Admin",
+      "kind": "UI components",
+      "description": "5 typescript files \u00b7 UI components \u00b7 anchored by EditUser.tsx",
+      "count": 5,
+      "language": "typescript",
+      "anchor": "frontend/src/components/Admin/EditUser.tsx"
+    },
+    {
+      "dir": "frontend/src/components/Items",
+      "label": "Items",
+      "kind": "UI components",
+      "description": "5 typescript files \u00b7 UI components \u00b7 anchored by EditItem.tsx",
+      "count": 5,
+      "language": "typescript",
+      "anchor": "frontend/src/components/Items/EditItem.tsx"
+    },
+    {
+      "dir": "backend/tests/api/routes",
+      "label": "tests/api/routes",
+      "kind": "tests",
+      "description": "4 python files \u00b7 tests \u00b7 anchored by test_login.py",
+      "count": 4,
+      "language": "python",
+      "anchor": "backend/tests/api/routes/test_login.py"
+    },
+    {
+      "dir": "frontend/src/client",
+      "label": "client",
+      "kind": "API client",
+      "description": "4 typescript files \u00b7 API client \u00b7 anchored by index.ts",
+      "count": 4,
+      "language": "typescript",
+      "anchor": "frontend/src/client/index.ts"
+    },
+    {
+      "dir": "frontend/src/components/UserSettings",
+      "label": "UserSettings",
+      "kind": "UI components",
+      "description": "4 typescript files \u00b7 UI components \u00b7 anchored by DeleteConfirmation.tsx",
+      "count": 4,
+      "language": "typescript",
+      "anchor": "frontend/src/components/UserSettings/DeleteConfirmation.tsx"
+    },
+    {
+      "dir": "frontend/src/hooks",
+      "label": "hooks",
+      "kind": "UI hooks",
+      "description": "4 typescript files \u00b7 UI hooks \u00b7 anchored by useAuth.ts",
+      "count": 4,
+      "language": "typescript",
+      "anchor": "frontend/src/hooks/useAuth.ts"
+    },
+    {
+      "dir": "frontend/src/routes/_layout",
+      "label": "_layout",
+      "kind": "UI components",
+      "description": "4 typescript files \u00b7 UI components \u00b7 anchored by admin.tsx",
+      "count": 4,
+      "language": "typescript",
+      "anchor": "frontend/src/routes/_layout/admin.tsx"
+    },
+    {
+      "dir": "frontend/tests/utils",
+      "label": "utils",
+      "kind": "tests",
+      "description": "4 typescript files \u00b7 tests \u00b7 anchored by random.ts",
+      "count": 4,
+      "language": "typescript",
+      "anchor": "frontend/tests/utils/random.ts"
+    },
+    {
+      "dir": "backend/app/core",
+      "label": "app/core",
+      "kind": "core infrastructure",
+      "description": "3 python files \u00b7 core infrastructure \u00b7 anchored by config.py",
+      "count": 3,
+      "language": "python",
+      "anchor": "backend/app/core/config.py"
     }
   ]
 }

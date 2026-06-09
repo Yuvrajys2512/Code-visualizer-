@@ -4,7 +4,7 @@ import {
   forceManyBody,
   forceSimulation,
 } from 'd3-force-3d'
-import type { Graph, GraphEdge, Layout, PositionedNode } from './types'
+import type { Graph, GraphEdge, Layout, PositionedCluster, PositionedNode } from './types'
 
 const WORLD_RADIUS = 120
 
@@ -154,9 +154,34 @@ export async function runLayout(
     const { vx: _vx, vy: _vy, vz: _vz, ...rest } = n
     return rest
   })
+
+  // Anchor each semantic cluster at the centroid of its settled members.
+  const clusters: PositionedCluster[] = []
+  for (const cluster of graph.clusters ?? []) {
+    const members = positioned.filter((n) => n.dir === cluster.dir)
+    if (members.length === 0) continue
+    let cx = 0
+    let cy = 0
+    let cz = 0
+    for (const m of members) {
+      cx += m.x
+      cy += m.y
+      cz += m.z
+    }
+    cx /= members.length
+    cy /= members.length
+    cz /= members.length
+    let radius = 6
+    for (const m of members) {
+      radius = Math.max(radius, Math.hypot(m.x - cx, m.y - cy, m.z - cz))
+    }
+    clusters.push({ ...cluster, x: cx, y: cy, z: cz, radius })
+  }
+
   return {
     nodes: positioned,
     edges: cleanEdges,
+    clusters,
     byId: new Map(positioned.map((n) => [n.id, n])),
     neighbours,
     inDegree,

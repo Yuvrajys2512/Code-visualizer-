@@ -15,6 +15,7 @@ import tempfile
 from collections import Counter, defaultdict
 
 import parsers
+import semantics
 
 # ---------------------------------------------------------------------------
 # What counts as source
@@ -284,6 +285,7 @@ def build_graph(root: str) -> dict:
     sources, languages, locs, py_roots, js_roots = _collect_sources(root)
     edges = _extract_edges(root, sources, languages, py_roots, js_roots)
     significance = _significance(sorted(sources), edges)
+    extras, clusters = semantics.enrich(sources, languages, edges, significance)
 
     nodes = [
         {
@@ -293,6 +295,8 @@ def build_graph(root: str) -> dict:
             "loc": locs[rel],
             "language": languages[rel],
             "significance": significance[rel],
+            "role": extras[rel]["role"],
+            "description": extras[rel]["description"],
         }
         for rel in sorted(sources)
     ]
@@ -300,4 +304,4 @@ def build_graph(root: str) -> dict:
         {"source": src, "target": dst, "type": "import"}
         for src, dst in sorted(edges)
     ]
-    return {"nodes": nodes, "edges": edge_list}
+    return {"nodes": nodes, "edges": edge_list, "clusters": clusters}

@@ -20,7 +20,13 @@ if (process.env.SUBMIT) await page.click('form button') // live ingest via the f
 await page.waitForSelector('.stats', { timeout: 300_000 })
 await new Promise((r) => setTimeout(r, settle))
 const click = process.argv[5]
-if (click === 'probe') {
+if (click?.startsWith('atlas:')) {
+  // click the nth row of the constellation atlas panel
+  const rows = await page.$$('.atlas-row')
+  const n = Number(click.slice(6))
+  if (rows[n]) await rows[n].click()
+  await new Promise((r) => setTimeout(r, 4000))
+} else if (click === 'probe') {
   // walk a grid until a star is actually hit (inspector panel appears)
   outer: for (let y = 420; y <= 860; y += 36) {
     for (let x = 320; x <= 960; x += 36) {

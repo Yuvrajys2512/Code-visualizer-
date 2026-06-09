@@ -11,11 +11,13 @@ export default function App() {
   const [layout, setLayout] = useState<Layout | null>(null)
   const [selectedId, setSelectedId] = useState<string | null>(null)
   const [hoveredId, setHoveredId] = useState<string | null>(null)
+  const [flyToCluster, setFlyToCluster] = useState<{ dir: string; seq: number } | null>(null)
 
   const buildSky = useCallback(async (loader: () => Promise<Graph>) => {
     setStatus({ kind: 'ingesting' })
     setSelectedId(null)
     setHoveredId(null)
+    setFlyToCluster(null)
     try {
       const graph = await loader()
       setStatus({ kind: 'layout', progress: 0 })
@@ -53,8 +55,12 @@ export default function App() {
             layout={layout}
             selectedId={selectedId}
             hoveredId={hoveredId}
+            flyToCluster={flyToCluster}
             onHover={setHoveredId}
-            onSelect={setSelectedId}
+            onSelect={(id) => {
+              setSelectedId(id)
+              if (id) setFlyToCluster(null)
+            }}
           />
         )}
       </Canvas>
@@ -64,6 +70,10 @@ export default function App() {
         selectedId={selectedId}
         hoveredId={hoveredId}
         onIngest={handleIngest}
+        onFlyToCluster={(dir) => {
+          setSelectedId(null)
+          setFlyToCluster((prev) => ({ dir, seq: (prev?.seq ?? 0) + 1 }))
+        }}
       />
     </div>
   )

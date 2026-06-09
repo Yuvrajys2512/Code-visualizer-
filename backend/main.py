@@ -36,6 +36,8 @@ class Node(BaseModel):
     loc: int
     language: str
     significance: float = Field(ge=0.0, le=1.0)
+    role: str
+    description: str
 
 
 class Edge(BaseModel):
@@ -44,9 +46,20 @@ class Edge(BaseModel):
     type: str
 
 
+class Cluster(BaseModel):
+    dir: str
+    label: str
+    kind: str
+    description: str
+    count: int
+    language: str
+    anchor: str
+
+
 class Graph(BaseModel):
     nodes: list[Node]
     edges: list[Edge]
+    clusters: list[Cluster]
 
 
 @app.get("/health")

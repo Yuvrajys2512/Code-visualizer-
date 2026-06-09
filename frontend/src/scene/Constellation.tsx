@@ -4,9 +4,10 @@ import { useMemo, useRef } from 'react'
 import type { OrbitControls as OrbitControlsImpl } from 'three-stdlib'
 import { VOID_COLOR } from '../palette'
 import type { Layout } from '../types'
+import { ClusterLabels } from './ClusterLabels'
 import { buildCurves } from './curves'
 import { Edges } from './Edges'
-import { FocusController } from './FocusController'
+import { FocusController, type CameraGoal } from './FocusController'
 import { Labels } from './Labels'
 import { Nodes } from './Nodes'
 import { Particles } from './Particles'
@@ -15,6 +16,8 @@ interface ConstellationProps {
   layout: Layout
   selectedId: string | null
   hoveredId: string | null
+  /** dir of a cluster to fly to, with a sequence number to re-trigger */
+  flyToCluster: { dir: string; seq: number } | null
   onHover: (id: string | null) => void
   onSelect: (id: string | null) => void
 }
@@ -23,6 +26,7 @@ export function Constellation({
   layout,
   selectedId,
   hoveredId,
+  flyToCluster,
   onHover,
   onSelect,
 }: ConstellationProps) {
@@ -36,6 +40,32 @@ export function Constellation({
     for (const n of layout.neighbours.get(selectedId) ?? []) set.add(n)
     return set
   }, [layout, selectedId])
+
+  const goal = useMemo<CameraGoal | null>(() => {
+    if (selectedId) {
+      const node = layout.byId.get(selectedId)
+      if (!node) return null
+      return {
+        key: `node:${selectedId}`,
+        x: node.x,
+        y: node.y,
+        z: node.z,
+        distance: Math.max(26, node.radius * 11),
+      }
+    }
+    if (flyToCluster) {
+      const cluster = layout.clusters.find((c) => c.dir === flyToCluster.dir)
+      if (!cluster) return null
+      return {
+        key: `cluster:${flyToCluster.dir}:${flyToCluster.seq}`,
+        x: cluster.x,
+        y: cluster.y,
+        z: cluster.z,
+        distance: Math.min(220, Math.max(45, cluster.radius * 2.6)),
+      }
+    }
+    return null
+  }, [layout, selectedId, flyToCluster])
 
   return (
     <>
@@ -54,6 +84,7 @@ export function Constellation({
         <Edges layout={layout} curves={curves} focusSet={focusSet} />
         <Particles layout={layout} curves={curves} focusSet={focusSet} />
         <Labels layout={layout} focusSet={focusSet} selectedId={selectedId} />
+        <ClusterLabels layout={layout} focusSet={focusSet} />
       </group>
 
       <OrbitControls
@@ -66,7 +97,7 @@ export function Constellation({
         minDistance={18}
         maxDistance={420}
       />
-      <FocusController controlsRef={controlsRef} layout={layout} selectedId={selectedId} />
+      <FocusController controlsRef={controlsRef} goal={goal} />
 
       {/* ?nofx escape hatch: software GL (headless/CI, ancient GPUs) can't do
           the composer's float render targets and would show a black void. */}

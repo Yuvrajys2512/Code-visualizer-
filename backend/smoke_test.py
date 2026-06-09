@@ -33,6 +33,16 @@ def main() -> None:
     for n in sorted(nodes, key=lambda n: -n["significance"])[:12]:
         print(f"  {n['significance']:.3f}  <-{in_deg[n['id']]:>3}  {n['id']}")
 
+    print("\nclusters:")
+    for c in graph.get("clusters", []):
+        print(f"  [{c['label']}] {c['description']}")
+
+    print("\nsample file semantics:")
+    for n in sorted(nodes, key=lambda n: -n["significance"])[:6]:
+        print(f"  {n['id']}  ({n['role']})")
+        if n["description"]:
+            print(f"      {n['description']}")
+
     with open("graph.json", "w", encoding="utf-8") as fh:
         json.dump(graph, fh, indent=2)
     print("\nfull graph written to graph.json")

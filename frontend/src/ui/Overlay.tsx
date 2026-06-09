@@ -15,9 +15,17 @@ interface OverlayProps {
   selectedId: string | null
   hoveredId: string | null
   onIngest: (url: string) => void
+  onFlyToCluster: (dir: string) => void
 }
 
-export function Overlay({ status, layout, selectedId, hoveredId, onIngest }: OverlayProps) {
+export function Overlay({
+  status,
+  layout,
+  selectedId,
+  hoveredId,
+  onIngest,
+  onFlyToCluster,
+}: OverlayProps) {
   const [url, setUrl] = useState('https://github.com/fastapi/full-stack-fastapi-template')
   const busy = status.kind === 'ingesting' || status.kind === 'layout'
 
@@ -74,6 +82,25 @@ export function Overlay({ status, layout, selectedId, hoveredId, onIngest }: Ove
         )}
       </div>
 
+      {layout && status.kind === 'ready' && layout.clusters.length > 0 && (
+        <div className="panel atlas">
+          <p className="atlas-title">constellations</p>
+          {layout.clusters.map((cluster) => (
+            <button
+              key={cluster.dir}
+              className="atlas-row"
+              title={cluster.description}
+              onClick={() => onFlyToCluster(cluster.dir)}
+            >
+              <i style={{ background: languageColorHex(cluster.language) }} />
+              <span className="atlas-label">{cluster.label}</span>
+              {cluster.kind && <span className="atlas-kind">{cluster.kind}</span>}
+              <em>{cluster.count}</em>
+            </button>
+          ))}
+        </div>
+      )}
+
       {inspected && (
         <div className="panel inspector">
           <div className="inspector-title">
@@ -81,6 +108,12 @@ export function Overlay({ status, layout, selectedId, hoveredId, onIngest }: Ove
             <strong>{inspected.name}</strong>
           </div>
           {inspected.dir && <p className="path">{inspected.dir}/</p>}
+          {inspected.role && inspected.role !== 'module' && (
+            <span className={`role role-${inspected.role.replace(/\s+/g, '-')}`}>
+              {inspected.role}
+            </span>
+          )}
+          {inspected.description && <p className="desc">{inspected.description}</p>}
           <div className="facts">
             <span>{inspected.language}</span>
             <span>{inspected.loc} loc</span>
