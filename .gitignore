@@ -1,0 +1,30 @@
+# Tooling / local config
+.claude/
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+env/
+*.egg-info/
+
+# Node (frontend, later phases)
+node_modules/
+dist/
+build/
+.next/
+
+# Env / secrets
+.env
+.env.*
+
+# Generated artifacts
+backend/graph.json
+graph.json
+
+# OS
+Thumbs.db
+.DS_Store
