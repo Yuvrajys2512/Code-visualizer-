@@ -6,11 +6,20 @@ POST /ingest { "repo_url": "<git url>" } -> { nodes, edges }
 import re
 
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
 from analyzer import CloneError, analyze_repo
 
 app = FastAPI(title="Constellation — repo ingestion", version="0.1.0")
+
+# The Vite dev server proxies /api -> here, but allow direct calls too.
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # https://, ssh://, or scp-style git@host:org/repo — no local paths, no flags.
 _GIT_URL = re.compile(r"^(?:https?://|ssh://|git@)[\w][\w.@:/~+-]*$")

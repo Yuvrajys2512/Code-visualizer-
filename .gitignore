@@ -24,6 +24,8 @@ build/
 # Generated artifacts
 backend/graph.json
 graph.json
+frontend/*.png
+frontend/shot.png
 
 # OS
 Thumbs.db

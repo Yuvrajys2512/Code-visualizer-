@@ -1,0 +1,2718 @@
+{
+  "nodes": [
+    {
+      "id": "backend/app/api/deps.py",
+      "name": "deps.py",
+      "dir": "backend/app/api",
+      "loc": 44,
+      "language": "python",
+      "significance": 0.444
+    },
+    {
+      "id": "backend/app/api/main.py",
+      "name": "main.py",
+      "dir": "backend/app/api",
+      "loc": 10,
+      "language": "python",
+      "significance": 0.348
+    },
+    {
+      "id": "backend/app/api/routes/items.py",
+      "name": "items.py",
+      "dir": "backend/app/api/routes",
+      "loc": 98,
+      "language": "python",
+      "significance": 0.255
+    },
+    {
+      "id": "backend/app/api/routes/login.py",
+      "name": "login.py",
+      "dir": "backend/app/api/routes",
+      "loc": 107,
+      "language": "python",
+      "significance": 0.326
+    },
+    {
+      "id": "backend/app/api/routes/private.py",
+      "name": "private.py",
+      "dir": "backend/app/api/routes",
+      "loc": 28,
+      "language": "python",
+      "significance": 0.278
+    },
+    {
+      "id": "backend/app/api/routes/users.py",
+      "name": "users.py",
+      "dir": "backend/app/api/routes",
+      "loc": 202,
+      "language": "python",
+      "significance": 0.326
+    },
+    {
+      "id": "backend/app/api/routes/utils.py",
+      "name": "utils.py",
+      "dir": "backend/app/api/routes",
+      "loc": 25,
+      "language": "python",
+      "significance": 0.278
+    },
+    {
+      "id": "backend/app/backend_pre_start.py",
+      "name": "backend_pre_start.py",
+      "dir": "backend/app",
+      "loc": 29,
+      "language": "python",
+      "significance": 0.269
+    },
+    {
+      "id": "backend/app/core/config.py",
+      "name": "config.py",
+      "dir": "backend/app/core",
+      "loc": 100,
+      "language": "python",
+      "significance": 0.717
+    },
+    {
+      "id": "backend/app/core/db.py",
+      "name": "db.py",
+      "dir": "backend/app/core",
+      "loc": 25,
+      "language": "python",
+      "significance": 0.517
+    },
+    {
+      "id": "backend/app/core/security.py",
+      "name": "security.py",
+      "dir": "backend/app/core",
+      "loc": 25,
+      "language": "python",
+      "significance": 0.543
+    },
+    {
+      "id": "backend/app/crud.py",
+      "name": "crud.py",
+      "dir": "backend/app",
+      "loc": 54,
+      "language": "python",
+      "significance": 0.512
+    },
+    {
+      "id": "backend/app/initial_data.py",
+      "name": "initial_data.py",
+      "dir": "backend/app",
+      "loc": 14,
+      "language": "python",
+      "significance": 0.119
+    },
+    {
+      "id": "backend/app/main.py",
+      "name": "main.py",
+      "dir": "backend/app",
+      "loc": 25,
+      "language": "python",
+      "significance": 0.248
+    },
+    {
+      "id": "backend/app/models.py",
+      "name": "models.py",
+      "dir": "backend/app",
+      "loc": 88,
+      "language": "python",
+      "significance": 0.647
+    },
+    {
+      "id": "backend/app/tests_pre_start.py",
+      "name": "tests_pre_start.py",
+      "dir": "backend/app",
+      "loc": 29,
+      "language": "python",
+      "significance": 0.269
+    },
+    {
+      "id": "backend/app/utils.py",
+      "name": "utils.py",
+      "dir": "backend/app",
+      "loc": 104,
+      "language": "python",
+      "significance": 0.376
+    },
+    {
+      "id": "backend/tests/api/routes/test_items.py",
+      "name": "test_items.py",
+      "dir": "backend/tests/api/routes",
+      "loc": 140,
+      "language": "python",
+      "significance": 0.165
+    },
+    {
+      "id": "backend/tests/api/routes/test_login.py",
+      "name": "test_login.py",
+      "dir": "backend/tests/api/routes",
+      "loc": 153,
+      "language": "python",
+      "significance": 0.277
+    },
+    {
+      "id": "backend/tests/api/routes/test_private.py",
+      "name": "test_private.py",
+      "dir": "backend/tests/api/routes",
+      "loc": 19,
+      "language": "python",
+      "significance": 0.165
+    },
+    {
+      "id": "backend/tests/api/routes/test_users.py",
+      "name": "test_users.py",
+      "dir": "backend/tests/api/routes",
+      "loc": 442,
+      "language": "python",
+      "significance": 0.262
+    },
+    {
+      "id": "backend/tests/conftest.py",
+      "name": "conftest.py",
+      "dir": "backend/tests",
+      "loc": 32,
+      "language": "python",
+      "significance": 0.262
+    },
+    {
+      "id": "backend/tests/crud/test_user.py",
+      "name": "test_user.py",
+      "dir": "backend/tests/crud",
+      "loc": 102,
+      "language": "python",
+      "significance": 0.224
+    },
+    {
+      "id": "backend/tests/scripts/test_backend_pre_start.py",
+      "name": "test_backend_pre_start.py",
+      "dir": "backend/tests/scripts",
+      "loc": 24,
+      "language": "python",
+      "significance": 0.119
+    },
+    {
+      "id": "backend/tests/scripts/test_test_pre_start.py",
+      "name": "test_test_pre_start.py",
+      "dir": "backend/tests/scripts",
+      "loc": 24,
+      "language": "python",
+      "significance": 0.119
+    },
+    {
+      "id": "backend/tests/utils/item.py",
+      "name": "item.py",
+      "dir": "backend/tests/utils",
+      "loc": 13,
+      "language": "python",
+      "significance": 0.314
+    },
+    {
+      "id": "backend/tests/utils/user.py",
+      "name": "user.py",
+      "dir": "backend/tests/utils",
+      "loc": 39,
+      "language": "python",
+      "significance": 0.393
+    },
+    {
+      "id": "backend/tests/utils/utils.py",
+      "name": "utils.py",
+      "dir": "backend/tests/utils",
+      "loc": 18,
+      "language": "python",
+      "significance": 0.421
+    },
+    {
+      "id": "frontend/openapi-ts.config.ts",
+      "name": "openapi-ts.config.ts",
+      "dir": "frontend",
+      "loc": 29,
+      "language": "typescript",
+      "significance": 0.04
+    },
+    {
+      "id": "frontend/playwright.config.ts",
+      "name": "playwright.config.ts",
+      "dir": "frontend",
+      "loc": 81,
+      "language": "typescript",
+      "significance": 0.04
+    },
+    {
+      "id": "frontend/src/client/core/ApiError.ts",
+      "name": "ApiError.ts",
+      "dir": "frontend/src/client/core",
+      "loc": 18,
+      "language": "typescript",
+      "significance": 0.373
+    },
+    {
+      "id": "frontend/src/client/core/ApiRequestOptions.ts",
+      "name": "ApiRequestOptions.ts",
+      "dir": "frontend/src/client/core",
+      "loc": 21,
+      "language": "typescript",
+      "significance": 0.431
+    },
+    {
+      "id": "frontend/src/client/core/ApiResult.ts",
+      "name": "ApiResult.ts",
+      "dir": "frontend/src/client/core",
+      "loc": 7,
+      "language": "typescript",
+      "significance": 0.314
+    },
+    {
+      "id": "frontend/src/client/core/CancelablePromise.ts",
+      "name": "CancelablePromise.ts",
+      "dir": "frontend/src/client/core",
+      "loc": 108,
+      "language": "typescript",
+      "significance": 0.382
+    },
+    {
+      "id": "frontend/src/client/core/OpenAPI.ts",
+      "name": "OpenAPI.ts",
+      "dir": "frontend/src/client/core",
+      "loc": 50,
+      "language": "typescript",
+      "significance": 0.401
+    },
+    {
+      "id": "frontend/src/client/core/request.ts",
+      "name": "request.ts",
+      "dir": "frontend/src/client/core",
+      "loc": 299,
+      "language": "typescript",
+      "significance": 0.339
+    },
+    {
+      "id": "frontend/src/client/index.ts",
+      "name": "index.ts",
+      "dir": "frontend/src/client",
+      "loc": 6,
+      "language": "typescript",
+      "significance": 0.731
+    },
+    {
+      "id": "frontend/src/client/schemas.gen.ts",
+      "name": "schemas.gen.ts",
+      "dir": "frontend/src/client",
+      "loc": 541,
+      "language": "typescript",
+      "significance": 0.04
+    },
+    {
+      "id": "frontend/src/client/sdk.gen.ts",
+      "name": "sdk.gen.ts",
+      "dir": "frontend/src/client",
+      "loc": 444,
+      "language": "typescript",
+      "significance": 0.371
+    },
+    {
+      "id": "frontend/src/client/types.gen.ts",
+      "name": "types.gen.ts",
+      "dir": "frontend/src/client",
+      "loc": 180,
+      "language": "typescript",
+      "significance": 0.338
+    },
+    {
+      "id": "frontend/src/components/Admin/AddUser.tsx",
+      "name": "AddUser.tsx",
+      "dir": "frontend/src/components/Admin",
+      "loc": 223,
+      "language": "typescript",
+      "significance": 0.355
+    },
+    {
+      "id": "frontend/src/components/Admin/DeleteUser.tsx",
+      "name": "DeleteUser.tsx",
+      "dir": "frontend/src/components/Admin",
+      "loc": 86,
+      "language": "typescript",
+      "significance": 0.336
+    },
+    {
+      "id": "frontend/src/components/Admin/EditUser.tsx",
+      "name": "EditUser.tsx",
+      "dir": "frontend/src/components/Admin",
+      "loc": 223,
+      "language": "typescript",
+      "significance": 0.367
+    },
+    {
+      "id": "frontend/src/components/Admin/UserActionsMenu.tsx",
+      "name": "UserActionsMenu.tsx",
+      "dir": "frontend/src/components/Admin",
+      "loc": 35,
+      "language": "typescript",
+      "significance": 0.33
+    },
+    {
+      "id": "frontend/src/components/Admin/columns.tsx",
+      "name": "columns.tsx",
+      "dir": "frontend/src/components/Admin",
+      "loc": 73,
+      "language": "typescript",
+      "significance": 0.291
+    },
+    {
+      "id": "frontend/src/components/Common/Appearance.tsx",
+      "name": "Appearance.tsx",
+      "dir": "frontend/src/components/Common",
+      "loc": 98,
+      "language": "typescript",
+      "significance": 0.35
+    },
+    {
+      "id": "frontend/src/components/Common/AuthLayout.tsx",
+      "name": "AuthLayout.tsx",
+      "dir": "frontend/src/components/Common",
+      "loc": 24,
+      "language": "typescript",
+      "significance": 0.372
+    },
+    {
+      "id": "frontend/src/components/Common/DataTable.tsx",
+      "name": "DataTable.tsx",
+      "dir": "frontend/src/components/Common",
+      "loc": 187,
+      "language": "typescript",
+      "significance": 0.318
+    },
+    {
+      "id": "frontend/src/components/Common/ErrorComponent.tsx",
+      "name": "ErrorComponent.tsx",
+      "dir": "frontend/src/components/Common",
+      "loc": 26,
+      "language": "typescript",
+      "significance": 0.247
+    },
+    {
+      "id": "frontend/src/components/Common/Footer.tsx",
+      "name": "Footer.tsx",
+      "dir": "frontend/src/components/Common",
+      "loc": 41,
+      "language": "typescript",
+      "significance": 0.277
+    },
+    {
+      "id": "frontend/src/components/Common/Logo.tsx",
+      "name": "Logo.tsx",
+      "dir": "frontend/src/components/Common",
+      "loc": 53,
+      "language": "typescript",
+      "significance": 0.318
+    },
+    {
+      "id": "frontend/src/components/Common/NotFound.tsx",
+      "name": "NotFound.tsx",
+      "dir": "frontend/src/components/Common",
+      "loc": 28,
+      "language": "typescript",
+      "significance": 0.247
+    },
+    {
+      "id": "frontend/src/components/Items/AddItem.tsx",
+      "name": "AddItem.tsx",
+      "dir": "frontend/src/components/Items",
+      "loc": 133,
+      "language": "typescript",
+      "significance": 0.348
+    },
+    {
+      "id": "frontend/src/components/Items/DeleteItem.tsx",
+      "name": "DeleteItem.tsx",
+      "dir": "frontend/src/components/Items",
+      "loc": 85,
+      "language": "typescript",
+      "significance": 0.338
+    },
+    {
+      "id": "frontend/src/components/Items/EditItem.tsx",
+      "name": "EditItem.tsx",
+      "dir": "frontend/src/components/Items",
+      "loc": 133,
+      "language": "typescript",
+      "significance": 0.36
+    },
+    {
+      "id": "frontend/src/components/Items/ItemActionsMenu.tsx",
+      "name": "ItemActionsMenu.tsx",
+      "dir": "frontend/src/components/Items",
+      "loc": 30,
+      "language": "typescript",
+      "significance": 0.312
+    },
+    {
+      "id": "frontend/src/components/Items/columns.tsx",
+      "name": "columns.tsx",
+      "dir": "frontend/src/components/Items",
+      "loc": 69,
+      "language": "typescript",
+      "significance": 0.31
+    },
+    {
+      "id": "frontend/src/components/Pending/PendingItems.tsx",
+      "name": "PendingItems.tsx",
+      "dir": "frontend/src/components/Pending",
+      "loc": 44,
+      "language": "typescript",
+      "significance": 0.253
+    },
+    {
+      "id": "frontend/src/components/Pending/PendingUsers.tsx",
+      "name": "PendingUsers.tsx",
+      "dir": "frontend/src/components/Pending",
+      "loc": 51,
+      "language": "typescript",
+      "significance": 0.249
+    },
+    {
+      "id": "frontend/src/components/Sidebar/AppSidebar.tsx",
+      "name": "AppSidebar.tsx",
+      "dir": "frontend/src/components/Sidebar",
+      "loc": 37,
+      "language": "typescript",
+      "significance": 0.329
+    },
+    {
+      "id": "frontend/src/components/Sidebar/Main.tsx",
+      "name": "Main.tsx",
+      "dir": "frontend/src/components/Sidebar",
+      "loc": 53,
+      "language": "typescript",
+      "significance": 0.224
+    },
+    {
+      "id": "frontend/src/components/Sidebar/User.tsx",
+      "name": "User.tsx",
+      "dir": "frontend/src/components/Sidebar",
+      "loc": 90,
+      "language": "typescript",
+      "significance": 0.309
+    },
+    {
+      "id": "frontend/src/components/UserSettings/ChangePassword.tsx",
+      "name": "ChangePassword.tsx",
+      "dir": "frontend/src/components/UserSettings",
+      "loc": 135,
+      "language": "typescript",
+      "significance": 0.324
+    },
+    {
+      "id": "frontend/src/components/UserSettings/DeleteAccount.tsx",
+      "name": "DeleteAccount.tsx",
+      "dir": "frontend/src/components/UserSettings",
+      "loc": 13,
+      "language": "typescript",
+      "significance": 0.225
+    },
+    {
+      "id": "frontend/src/components/UserSettings/DeleteConfirmation.tsx",
+      "name": "DeleteConfirmation.tsx",
+      "dir": "frontend/src/components/UserSettings",
+      "loc": 75,
+      "language": "typescript",
+      "significance": 0.388
+    },
+    {
+      "id": "frontend/src/components/UserSettings/UserInformation.tsx",
+      "name": "UserInformation.tsx",
+      "dir": "frontend/src/components/UserSettings",
+      "loc": 156,
+      "language": "typescript",
+      "significance": 0.358
+    },
+    {
+      "id": "frontend/src/components/theme-provider.tsx",
+      "name": "theme-provider.tsx",
+      "dir": "frontend/src/components",
+      "loc": 92,
+      "language": "typescript",
+      "significance": 0.34
+    },
+    {
+      "id": "frontend/src/components/ui/alert.tsx",
+      "name": "alert.tsx",
+      "dir": "frontend/src/components/ui",
+      "loc": 60,
+      "language": "typescript",
+      "significance": 0.119
+    },
+    {
+      "id": "frontend/src/components/ui/avatar.tsx",
+      "name": "avatar.tsx",
+      "dir": "frontend/src/components/ui",
+      "loc": 46,
+      "language": "typescript",
+      "significance": 0.226
+    },
+    {
+      "id": "frontend/src/components/ui/badge.tsx",
+      "name": "badge.tsx",
+      "dir": "frontend/src/components/ui",
+      "loc": 41,
+      "language": "typescript",
+      "significance": 0.231
+    },
+    {
+      "id": "frontend/src/components/ui/button-group.tsx",
+      "name": "button-group.tsx",
+      "dir": "frontend/src/components/ui",
+      "loc": 76,
+      "language": "typescript",
+      "significance": 0.165
+    },
+    {
+      "id": "frontend/src/components/ui/button.tsx",
+      "name": "button.tsx",
+      "dir": "frontend/src/components/ui",
+      "loc": 55,
+      "language": "typescript",
+      "significance": 0.656
+    },
+    {
+      "id": "frontend/src/components/ui/card.tsx",
+      "name": "card.tsx",
+      "dir": "frontend/src/components/ui",
+      "loc": 83,
+      "language": "typescript",
+      "significance": 0.119
+    },
+    {
+      "id": "frontend/src/components/ui/checkbox.tsx",
+      "name": "checkbox.tsx",
+      "dir": "frontend/src/components/ui",
+      "loc": 27,
+      "language": "typescript",
+      "significance": 0.269
+    },
+    {
+      "id": "frontend/src/components/ui/dialog.tsx",
+      "name": "dialog.tsx",
+      "dir": "frontend/src/components/ui",
+      "loc": 129,
+      "language": "typescript",
+      "significance": 0.423
+    },
+    {
+      "id": "frontend/src/components/ui/dropdown-menu.tsx",
+      "name": "dropdown-menu.tsx",
+      "dir": "frontend/src/components/ui",
+      "loc": 239,
+      "language": "typescript",
+      "significance": 0.454
+    },
+    {
+      "id": "frontend/src/components/ui/form.tsx",
+      "name": "form.tsx",
+      "dir": "frontend/src/components/ui",
+      "loc": 142,
+      "language": "typescript",
+      "significance": 0.476
+    },
+    {
+      "id": "frontend/src/components/ui/input.tsx",
+      "name": "input.tsx",
+      "dir": "frontend/src/components/ui",
+      "loc": 18,
+      "language": "typescript",
+      "significance": 0.461
+    },
+    {
+      "id": "frontend/src/components/ui/label.tsx",
+      "name": "label.tsx",
+      "dir": "frontend/src/components/ui",
+      "loc": 20,
+      "language": "typescript",
+      "significance": 0.274
+    },
+    {
+      "id": "frontend/src/components/ui/loading-button.tsx",
+      "name": "loading-button.tsx",
+      "dir": "frontend/src/components/ui",
+      "loc": 63,
+      "language": "typescript",
+      "significance": 0.516
+    },
+    {
+      "id": "frontend/src/components/ui/pagination.tsx",
+      "name": "pagination.tsx",
+      "dir": "frontend/src/components/ui",
+      "loc": 117,
+      "language": "typescript",
+      "significance": 0.165
+    },
+    {
+      "id": "frontend/src/components/ui/password-input.tsx",
+      "name": "password-input.tsx",
+      "dir": "frontend/src/components/ui",
+      "loc": 45,
+      "language": "typescript",
+      "significance": 0.364
+    },
+    {
+      "id": "frontend/src/components/ui/select.tsx",
+      "name": "select.tsx",
+      "dir": "frontend/src/components/ui",
+      "loc": 173,
+      "language": "typescript",
+      "significance": 0.241
+    },
+    {
+      "id": "frontend/src/components/ui/separator.tsx",
+      "name": "separator.tsx",
+      "dir": "frontend/src/components/ui",
+      "loc": 23,
+      "language": "typescript",
+      "significance": 0.305
+    },
+    {
+      "id": "frontend/src/components/ui/sheet.tsx",
+      "name": "sheet.tsx",
+      "dir": "frontend/src/components/ui",
+      "loc": 126,
+      "language": "typescript",
+      "significance": 0.236
+    },
+    {
+      "id": "frontend/src/components/ui/sidebar.tsx",
+      "name": "sidebar.tsx",
+      "dir": "frontend/src/components/ui",
+      "loc": 680,
+      "language": "typescript",
+      "significance": 0.488
+    },
+    {
+      "id": "frontend/src/components/ui/skeleton.tsx",
+      "name": "skeleton.tsx",
+      "dir": "frontend/src/components/ui",
+      "loc": 11,
+      "language": "typescript",
+      "significance": 0.361
+    },
+    {
+      "id": "frontend/src/components/ui/sonner.tsx",
+      "name": "sonner.tsx",
+      "dir": "frontend/src/components/ui",
+      "loc": 36,
+      "language": "typescript",
+      "significance": 0.19
+    },
+    {
+      "id": "frontend/src/components/ui/table.tsx",
+      "name": "table.tsx",
+      "dir": "frontend/src/components/ui",
+      "loc": 104,
+      "language": "typescript",
+      "significance": 0.364
+    },
+    {
+      "id": "frontend/src/components/ui/tabs.tsx",
+      "name": "tabs.tsx",
+      "dir": "frontend/src/components/ui",
+      "loc": 58,
+      "language": "typescript",
+      "significance": 0.225
+    },
+    {
+      "id": "frontend/src/components/ui/tooltip.tsx",
+      "name": "tooltip.tsx",
+      "dir": "frontend/src/components/ui",
+      "loc": 53,
+      "language": "typescript",
+      "significance": 0.236
+    },
+    {
+      "id": "frontend/src/hooks/useAuth.ts",
+      "name": "useAuth.ts",
+      "dir": "frontend/src/hooks",
+      "loc": 60,
+      "language": "typescript",
+      "significance": 0.56
+    },
+    {
+      "id": "frontend/src/hooks/useCopyToClipboard.ts",
+      "name": "useCopyToClipboard.ts",
+      "dir": "frontend/src/hooks",
+      "loc": 24,
+      "language": "typescript",
+      "significance": 0.189
+    },
+    {
+      "id": "frontend/src/hooks/useCustomToast.ts",
+      "name": "useCustomToast.ts",
+      "dir": "frontend/src/hooks",
+      "loc": 15,
+      "language": "typescript",
+      "significance": 0.528
+    },
+    {
+      "id": "frontend/src/hooks/useMobile.ts",
+      "name": "useMobile.ts",
+      "dir": "frontend/src/hooks",
+      "loc": 15,
+      "language": "typescript",
+      "significance": 0.199
+    },
+    {
+      "id": "frontend/src/lib/utils.ts",
+      "name": "utils.ts",
+      "dir": "frontend/src/lib",
+      "loc": 5,
+      "language": "typescript",
+      "significance": 1.0
+    },
+    {
+      "id": "frontend/src/main.tsx",
+      "name": "main.tsx",
+      "dir": "frontend/src",
+      "loc": 48,
+      "language": "typescript",
+      "significance": 0.224
+    },
+    {
+      "id": "frontend/src/routeTree.gen.ts",
+      "name": "routeTree.gen.ts",
+      "dir": "frontend/src",
+      "loc": 224,
+      "language": "typescript",
+      "significance": 0.37
+    },
+    {
+      "id": "frontend/src/routes/__root.tsx",
+      "name": "__root.tsx",
+      "dir": "frontend/src/routes",
+      "loc": 17,
+      "language": "typescript",
+      "significance": 0.243
+    },
+    {
+      "id": "frontend/src/routes/_layout.tsx",
+      "name": "_layout.tsx",
+      "dir": "frontend/src/routes",
+      "loc": 38,
+      "language": "typescript",
+      "significance": 0.284
+    },
+    {
+      "id": "frontend/src/routes/_layout/admin.tsx",
+      "name": "admin.tsx",
+      "dir": "frontend/src/routes/_layout",
+      "loc": 65,
+      "language": "typescript",
+      "significance": 0.314
+    },
+    {
+      "id": "frontend/src/routes/_layout/index.tsx",
+      "name": "index.tsx",
+      "dir": "frontend/src/routes/_layout",
+      "loc": 27,
+      "language": "typescript",
+      "significance": 0.215
+    },
+    {
+      "id": "frontend/src/routes/_layout/items.tsx",
+      "name": "items.tsx",
+      "dir": "frontend/src/routes/_layout",
+      "loc": 61,
+      "language": "typescript",
+      "significance": 0.3
+    },
+    {
+      "id": "frontend/src/routes/_layout/settings.tsx",
+      "name": "settings.tsx",
+      "dir": "frontend/src/routes/_layout",
+      "loc": 54,
+      "language": "typescript",
+      "significance": 0.3
+    },
+    {
+      "id": "frontend/src/routes/login.tsx",
+      "name": "login.tsx",
+      "dir": "frontend/src/routes",
+      "loc": 131,
+      "language": "typescript",
+      "significance": 0.327
+    },
+    {
+      "id": "frontend/src/routes/recover-password.tsx",
+      "name": "recover-password.tsx",
+      "dir": "frontend/src/routes",
+      "loc": 118,
+      "language": "typescript",
+      "significance": 0.338
+    },
+    {
+      "id": "frontend/src/routes/reset-password.tsx",
+      "name": "reset-password.tsx",
+      "dir": "frontend/src/routes",
+      "loc": 152,
+      "language": "typescript",
+      "significance": 0.338
+    },
+    {
+      "id": "frontend/src/routes/signup.tsx",
+      "name": "signup.tsx",
+      "dir": "frontend/src/routes",
+      "loc": 175,
+      "language": "typescript",
+      "significance": 0.314
+    },
+    {
+      "id": "frontend/src/utils.ts",
+      "name": "utils.ts",
+      "dir": "frontend/src",
+      "loc": 27,
+      "language": "typescript",
+      "significance": 0.547
+    },
+    {
+      "id": "frontend/tests/admin.spec.ts",
+      "name": "admin.spec.ts",
+      "dir": "frontend/tests",
+      "loc": 145,
+      "language": "typescript",
+      "significance": 0.224
+    },
+    {
+      "id": "frontend/tests/auth.setup.ts",
+      "name": "auth.setup.ts",
+      "dir": "frontend/tests",
+      "loc": 11,
+      "language": "typescript",
+      "significance": 0.119
+    },
+    {
+      "id": "frontend/tests/config.ts",
+      "name": "config.ts",
+      "dir": "frontend/tests",
+      "loc": 15,
+      "language": "typescript",
+      "significance": 0.385
+    },
+    {
+      "id": "frontend/tests/items.spec.ts",
+      "name": "items.spec.ts",
+      "dir": "frontend/tests",
+      "loc": 104,
+      "language": "typescript",
+      "significance": 0.198
+    },
+    {
+      "id": "frontend/tests/login.spec.ts",
+      "name": "login.spec.ts",
+      "dir": "frontend/tests",
+      "loc": 86,
+      "language": "typescript",
+      "significance": 0.165
+    },
+    {
+      "id": "frontend/tests/reset-password.spec.ts",
+      "name": "reset-password.spec.ts",
+      "dir": "frontend/tests",
+      "loc": 94,
+      "language": "typescript",
+      "significance": 0.198
+    },
+    {
+      "id": "frontend/tests/sign-up.spec.ts",
+      "name": "sign-up.spec.ts",
+      "dir": "frontend/tests",
+      "loc": 118,
+      "language": "typescript",
+      "significance": 0.119
+    },
+    {
+      "id": "frontend/tests/user-settings.spec.ts",
+      "name": "user-settings.spec.ts",
+      "dir": "frontend/tests",
+      "loc": 206,
+      "language": "typescript",
+      "significance": 0.224
+    },
+    {
+      "id": "frontend/tests/utils/mailcatcher.ts",
+      "name": "mailcatcher.ts",
+      "dir": "frontend/tests/utils",
+      "loc": 51,
+      "language": "typescript",
+      "significance": 0.197
+    },
+    {
+      "id": "frontend/tests/utils/privateApi.ts",
+      "name": "privateApi.ts",
+      "dir": "frontend/tests/utils",
+      "loc": 20,
+      "language": "typescript",
+      "significance": 0.334
+    },
+    {
+      "id": "frontend/tests/utils/random.ts",
+      "name": "random.ts",
+      "dir": "frontend/tests/utils",
+      "loc": 14,
+      "language": "typescript",
+      "significance": 0.444
+    },
+    {
+      "id": "frontend/tests/utils/user.ts",
+      "name": "user.ts",
+      "dir": "frontend/tests/utils",
+      "loc": 30,
+      "language": "typescript",
+      "significance": 0.358
+    },
+    {
+      "id": "frontend/vite.config.ts",
+      "name": "vite.config.ts",
+      "dir": "frontend",
+      "loc": 21,
+      "language": "typescript",
+      "significance": 0.04
+    },
+    {
+      "id": "hooks/post_gen_project.py",
+      "name": "post_gen_project.py",
+      "dir": "hooks",
+      "loc": 6,
+      "language": "python",
+      "significance": 0.04
+    },
+    {
+      "id": "scripts/add_latest_release_date.py",
+      "name": "add_latest_release_date.py",
+      "dir": "scripts",
+      "loc": 28,
+      "language": "python",
+      "significance": 0.04
+    }
+  ],
+  "edges": [
+    {
+      "source": "backend/app/api/deps.py",
+      "target": "backend/app/core/config.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/app/api/deps.py",
+      "target": "backend/app/core/db.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/app/api/deps.py",
+      "target": "backend/app/core/security.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/app/api/deps.py",
+      "target": "backend/app/models.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/app/api/main.py",
+      "target": "backend/app/api/routes/items.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/app/api/main.py",
+      "target": "backend/app/api/routes/login.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/app/api/main.py",
+      "target": "backend/app/api/routes/private.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/app/api/main.py",
+      "target": "backend/app/api/routes/users.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/app/api/main.py",
+      "target": "backend/app/api/routes/utils.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/app/api/main.py",
+      "target": "backend/app/core/config.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/app/api/routes/items.py",
+      "target": "backend/app/api/deps.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/app/api/routes/items.py",
+      "target": "backend/app/models.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/app/api/routes/login.py",
+      "target": "backend/app/api/deps.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/app/api/routes/login.py",
+      "target": "backend/app/core/config.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/app/api/routes/login.py",
+      "target": "backend/app/core/security.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/app/api/routes/login.py",
+      "target": "backend/app/crud.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/app/api/routes/login.py",
+      "target": "backend/app/models.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/app/api/routes/login.py",
+      "target": "backend/app/utils.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/app/api/routes/private.py",
+      "target": "backend/app/api/deps.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/app/api/routes/private.py",
+      "target": "backend/app/core/security.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/app/api/routes/private.py",
+      "target": "backend/app/models.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/app/api/routes/users.py",
+      "target": "backend/app/api/deps.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/app/api/routes/users.py",
+      "target": "backend/app/core/config.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/app/api/routes/users.py",
+      "target": "backend/app/core/security.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/app/api/routes/users.py",
+      "target": "backend/app/crud.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/app/api/routes/users.py",
+      "target": "backend/app/models.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/app/api/routes/users.py",
+      "target": "backend/app/utils.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/app/api/routes/utils.py",
+      "target": "backend/app/api/deps.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/app/api/routes/utils.py",
+      "target": "backend/app/models.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/app/api/routes/utils.py",
+      "target": "backend/app/utils.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/app/backend_pre_start.py",
+      "target": "backend/app/core/db.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/app/core/db.py",
+      "target": "backend/app/core/config.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/app/core/db.py",
+      "target": "backend/app/crud.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/app/core/db.py",
+      "target": "backend/app/models.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/app/core/security.py",
+      "target": "backend/app/core/config.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/app/crud.py",
+      "target": "backend/app/core/security.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/app/crud.py",
+      "target": "backend/app/models.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/app/initial_data.py",
+      "target": "backend/app/core/db.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/app/main.py",
+      "target": "backend/app/api/main.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/app/main.py",
+      "target": "backend/app/core/config.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/app/tests_pre_start.py",
+      "target": "backend/app/core/db.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/app/utils.py",
+      "target": "backend/app/core/config.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/app/utils.py",
+      "target": "backend/app/core/security.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/tests/api/routes/test_items.py",
+      "target": "backend/app/core/config.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/tests/api/routes/test_items.py",
+      "target": "backend/tests/utils/item.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/tests/api/routes/test_login.py",
+      "target": "backend/app/core/config.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/tests/api/routes/test_login.py",
+      "target": "backend/app/core/security.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/tests/api/routes/test_login.py",
+      "target": "backend/app/crud.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/tests/api/routes/test_login.py",
+      "target": "backend/app/models.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/tests/api/routes/test_login.py",
+      "target": "backend/app/utils.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/tests/api/routes/test_login.py",
+      "target": "backend/tests/utils/user.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/tests/api/routes/test_login.py",
+      "target": "backend/tests/utils/utils.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/tests/api/routes/test_private.py",
+      "target": "backend/app/core/config.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/tests/api/routes/test_private.py",
+      "target": "backend/app/models.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/tests/api/routes/test_users.py",
+      "target": "backend/app/core/config.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/tests/api/routes/test_users.py",
+      "target": "backend/app/core/security.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/tests/api/routes/test_users.py",
+      "target": "backend/app/crud.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/tests/api/routes/test_users.py",
+      "target": "backend/app/models.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/tests/api/routes/test_users.py",
+      "target": "backend/tests/utils/user.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/tests/api/routes/test_users.py",
+      "target": "backend/tests/utils/utils.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/tests/conftest.py",
+      "target": "backend/app/core/config.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/tests/conftest.py",
+      "target": "backend/app/core/db.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/tests/conftest.py",
+      "target": "backend/app/main.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/tests/conftest.py",
+      "target": "backend/app/models.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/tests/conftest.py",
+      "target": "backend/tests/utils/user.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/tests/conftest.py",
+      "target": "backend/tests/utils/utils.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/tests/crud/test_user.py",
+      "target": "backend/app/core/security.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/tests/crud/test_user.py",
+      "target": "backend/app/crud.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/tests/crud/test_user.py",
+      "target": "backend/app/models.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/tests/crud/test_user.py",
+      "target": "backend/tests/utils/utils.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/tests/scripts/test_backend_pre_start.py",
+      "target": "backend/app/backend_pre_start.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/tests/scripts/test_test_pre_start.py",
+      "target": "backend/app/tests_pre_start.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/tests/utils/item.py",
+      "target": "backend/app/crud.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/tests/utils/item.py",
+      "target": "backend/app/models.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/tests/utils/item.py",
+      "target": "backend/tests/utils/user.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/tests/utils/item.py",
+      "target": "backend/tests/utils/utils.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/tests/utils/user.py",
+      "target": "backend/app/core/config.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/tests/utils/user.py",
+      "target": "backend/app/crud.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/tests/utils/user.py",
+      "target": "backend/app/models.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/tests/utils/user.py",
+      "target": "backend/tests/utils/utils.py",
+      "type": "import"
+    },
+    {
+      "source": "backend/tests/utils/utils.py",
+      "target": "backend/app/core/config.py",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/client/core/ApiError.ts",
+      "target": "frontend/src/client/core/ApiRequestOptions.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/client/core/ApiError.ts",
+      "target": "frontend/src/client/core/ApiResult.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/client/core/OpenAPI.ts",
+      "target": "frontend/src/client/core/ApiRequestOptions.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/client/core/request.ts",
+      "target": "frontend/src/client/core/ApiError.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/client/core/request.ts",
+      "target": "frontend/src/client/core/ApiRequestOptions.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/client/core/request.ts",
+      "target": "frontend/src/client/core/ApiResult.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/client/core/request.ts",
+      "target": "frontend/src/client/core/CancelablePromise.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/client/core/request.ts",
+      "target": "frontend/src/client/core/OpenAPI.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/client/index.ts",
+      "target": "frontend/src/client/core/ApiError.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/client/index.ts",
+      "target": "frontend/src/client/core/CancelablePromise.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/client/index.ts",
+      "target": "frontend/src/client/core/OpenAPI.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/client/index.ts",
+      "target": "frontend/src/client/sdk.gen.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/client/index.ts",
+      "target": "frontend/src/client/types.gen.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/client/sdk.gen.ts",
+      "target": "frontend/src/client/core/CancelablePromise.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/client/sdk.gen.ts",
+      "target": "frontend/src/client/core/OpenAPI.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/client/sdk.gen.ts",
+      "target": "frontend/src/client/core/request.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/client/sdk.gen.ts",
+      "target": "frontend/src/client/types.gen.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Admin/AddUser.tsx",
+      "target": "frontend/src/client/index.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Admin/AddUser.tsx",
+      "target": "frontend/src/components/ui/button.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Admin/AddUser.tsx",
+      "target": "frontend/src/components/ui/checkbox.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Admin/AddUser.tsx",
+      "target": "frontend/src/components/ui/dialog.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Admin/AddUser.tsx",
+      "target": "frontend/src/components/ui/form.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Admin/AddUser.tsx",
+      "target": "frontend/src/components/ui/input.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Admin/AddUser.tsx",
+      "target": "frontend/src/components/ui/loading-button.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Admin/AddUser.tsx",
+      "target": "frontend/src/hooks/useCustomToast.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Admin/AddUser.tsx",
+      "target": "frontend/src/utils.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Admin/DeleteUser.tsx",
+      "target": "frontend/src/client/index.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Admin/DeleteUser.tsx",
+      "target": "frontend/src/components/ui/button.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Admin/DeleteUser.tsx",
+      "target": "frontend/src/components/ui/dialog.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Admin/DeleteUser.tsx",
+      "target": "frontend/src/components/ui/dropdown-menu.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Admin/DeleteUser.tsx",
+      "target": "frontend/src/components/ui/loading-button.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Admin/DeleteUser.tsx",
+      "target": "frontend/src/hooks/useCustomToast.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Admin/DeleteUser.tsx",
+      "target": "frontend/src/utils.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Admin/EditUser.tsx",
+      "target": "frontend/src/client/index.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Admin/EditUser.tsx",
+      "target": "frontend/src/components/ui/button.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Admin/EditUser.tsx",
+      "target": "frontend/src/components/ui/checkbox.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Admin/EditUser.tsx",
+      "target": "frontend/src/components/ui/dialog.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Admin/EditUser.tsx",
+      "target": "frontend/src/components/ui/dropdown-menu.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Admin/EditUser.tsx",
+      "target": "frontend/src/components/ui/form.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Admin/EditUser.tsx",
+      "target": "frontend/src/components/ui/input.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Admin/EditUser.tsx",
+      "target": "frontend/src/components/ui/loading-button.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Admin/EditUser.tsx",
+      "target": "frontend/src/hooks/useCustomToast.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Admin/EditUser.tsx",
+      "target": "frontend/src/utils.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Admin/UserActionsMenu.tsx",
+      "target": "frontend/src/client/index.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Admin/UserActionsMenu.tsx",
+      "target": "frontend/src/components/Admin/DeleteUser.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Admin/UserActionsMenu.tsx",
+      "target": "frontend/src/components/Admin/EditUser.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Admin/UserActionsMenu.tsx",
+      "target": "frontend/src/components/ui/button.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Admin/UserActionsMenu.tsx",
+      "target": "frontend/src/components/ui/dropdown-menu.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Admin/UserActionsMenu.tsx",
+      "target": "frontend/src/hooks/useAuth.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Admin/columns.tsx",
+      "target": "frontend/src/client/index.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Admin/columns.tsx",
+      "target": "frontend/src/components/Admin/UserActionsMenu.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Admin/columns.tsx",
+      "target": "frontend/src/components/ui/badge.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Admin/columns.tsx",
+      "target": "frontend/src/lib/utils.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Common/Appearance.tsx",
+      "target": "frontend/src/components/theme-provider.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Common/Appearance.tsx",
+      "target": "frontend/src/components/ui/button.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Common/Appearance.tsx",
+      "target": "frontend/src/components/ui/dropdown-menu.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Common/Appearance.tsx",
+      "target": "frontend/src/components/ui/sidebar.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Common/AuthLayout.tsx",
+      "target": "frontend/src/components/Common/Appearance.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Common/AuthLayout.tsx",
+      "target": "frontend/src/components/Common/Footer.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Common/AuthLayout.tsx",
+      "target": "frontend/src/components/Common/Logo.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Common/DataTable.tsx",
+      "target": "frontend/src/components/ui/button.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Common/DataTable.tsx",
+      "target": "frontend/src/components/ui/select.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Common/DataTable.tsx",
+      "target": "frontend/src/components/ui/table.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Common/ErrorComponent.tsx",
+      "target": "frontend/src/components/ui/button.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Common/Logo.tsx",
+      "target": "frontend/src/components/theme-provider.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Common/Logo.tsx",
+      "target": "frontend/src/lib/utils.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Common/NotFound.tsx",
+      "target": "frontend/src/components/ui/button.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Items/AddItem.tsx",
+      "target": "frontend/src/client/index.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Items/AddItem.tsx",
+      "target": "frontend/src/components/ui/button.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Items/AddItem.tsx",
+      "target": "frontend/src/components/ui/dialog.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Items/AddItem.tsx",
+      "target": "frontend/src/components/ui/form.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Items/AddItem.tsx",
+      "target": "frontend/src/components/ui/input.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Items/AddItem.tsx",
+      "target": "frontend/src/components/ui/loading-button.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Items/AddItem.tsx",
+      "target": "frontend/src/hooks/useCustomToast.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Items/AddItem.tsx",
+      "target": "frontend/src/utils.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Items/DeleteItem.tsx",
+      "target": "frontend/src/client/index.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Items/DeleteItem.tsx",
+      "target": "frontend/src/components/ui/button.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Items/DeleteItem.tsx",
+      "target": "frontend/src/components/ui/dialog.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Items/DeleteItem.tsx",
+      "target": "frontend/src/components/ui/dropdown-menu.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Items/DeleteItem.tsx",
+      "target": "frontend/src/components/ui/loading-button.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Items/DeleteItem.tsx",
+      "target": "frontend/src/hooks/useCustomToast.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Items/DeleteItem.tsx",
+      "target": "frontend/src/utils.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Items/EditItem.tsx",
+      "target": "frontend/src/client/index.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Items/EditItem.tsx",
+      "target": "frontend/src/components/ui/button.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Items/EditItem.tsx",
+      "target": "frontend/src/components/ui/dialog.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Items/EditItem.tsx",
+      "target": "frontend/src/components/ui/dropdown-menu.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Items/EditItem.tsx",
+      "target": "frontend/src/components/ui/form.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Items/EditItem.tsx",
+      "target": "frontend/src/components/ui/input.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Items/EditItem.tsx",
+      "target": "frontend/src/components/ui/loading-button.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Items/EditItem.tsx",
+      "target": "frontend/src/hooks/useCustomToast.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Items/EditItem.tsx",
+      "target": "frontend/src/utils.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Items/ItemActionsMenu.tsx",
+      "target": "frontend/src/client/index.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Items/ItemActionsMenu.tsx",
+      "target": "frontend/src/components/Items/DeleteItem.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Items/ItemActionsMenu.tsx",
+      "target": "frontend/src/components/Items/EditItem.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Items/ItemActionsMenu.tsx",
+      "target": "frontend/src/components/ui/button.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Items/ItemActionsMenu.tsx",
+      "target": "frontend/src/components/ui/dropdown-menu.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Items/columns.tsx",
+      "target": "frontend/src/client/index.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Items/columns.tsx",
+      "target": "frontend/src/components/Items/ItemActionsMenu.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Items/columns.tsx",
+      "target": "frontend/src/components/ui/button.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Items/columns.tsx",
+      "target": "frontend/src/hooks/useCopyToClipboard.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Items/columns.tsx",
+      "target": "frontend/src/lib/utils.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Pending/PendingItems.tsx",
+      "target": "frontend/src/components/ui/skeleton.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Pending/PendingItems.tsx",
+      "target": "frontend/src/components/ui/table.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Pending/PendingUsers.tsx",
+      "target": "frontend/src/components/ui/skeleton.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Pending/PendingUsers.tsx",
+      "target": "frontend/src/components/ui/table.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Sidebar/AppSidebar.tsx",
+      "target": "frontend/src/components/Common/Appearance.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Sidebar/AppSidebar.tsx",
+      "target": "frontend/src/components/Common/Logo.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Sidebar/AppSidebar.tsx",
+      "target": "frontend/src/components/Sidebar/Main.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Sidebar/AppSidebar.tsx",
+      "target": "frontend/src/components/Sidebar/User.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Sidebar/AppSidebar.tsx",
+      "target": "frontend/src/components/ui/sidebar.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Sidebar/AppSidebar.tsx",
+      "target": "frontend/src/hooks/useAuth.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Sidebar/Main.tsx",
+      "target": "frontend/src/components/ui/sidebar.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Sidebar/User.tsx",
+      "target": "frontend/src/components/ui/avatar.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Sidebar/User.tsx",
+      "target": "frontend/src/components/ui/dropdown-menu.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Sidebar/User.tsx",
+      "target": "frontend/src/components/ui/sidebar.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Sidebar/User.tsx",
+      "target": "frontend/src/hooks/useAuth.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/Sidebar/User.tsx",
+      "target": "frontend/src/utils.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/UserSettings/ChangePassword.tsx",
+      "target": "frontend/src/client/index.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/UserSettings/ChangePassword.tsx",
+      "target": "frontend/src/components/ui/form.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/UserSettings/ChangePassword.tsx",
+      "target": "frontend/src/components/ui/loading-button.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/UserSettings/ChangePassword.tsx",
+      "target": "frontend/src/components/ui/password-input.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/UserSettings/ChangePassword.tsx",
+      "target": "frontend/src/hooks/useCustomToast.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/UserSettings/ChangePassword.tsx",
+      "target": "frontend/src/utils.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/UserSettings/DeleteAccount.tsx",
+      "target": "frontend/src/components/UserSettings/DeleteConfirmation.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/UserSettings/DeleteConfirmation.tsx",
+      "target": "frontend/src/client/index.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/UserSettings/DeleteConfirmation.tsx",
+      "target": "frontend/src/components/ui/button.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/UserSettings/DeleteConfirmation.tsx",
+      "target": "frontend/src/components/ui/dialog.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/UserSettings/DeleteConfirmation.tsx",
+      "target": "frontend/src/components/ui/loading-button.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/UserSettings/DeleteConfirmation.tsx",
+      "target": "frontend/src/hooks/useAuth.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/UserSettings/DeleteConfirmation.tsx",
+      "target": "frontend/src/hooks/useCustomToast.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/UserSettings/DeleteConfirmation.tsx",
+      "target": "frontend/src/utils.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/UserSettings/UserInformation.tsx",
+      "target": "frontend/src/client/index.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/UserSettings/UserInformation.tsx",
+      "target": "frontend/src/components/ui/button.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/UserSettings/UserInformation.tsx",
+      "target": "frontend/src/components/ui/form.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/UserSettings/UserInformation.tsx",
+      "target": "frontend/src/components/ui/input.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/UserSettings/UserInformation.tsx",
+      "target": "frontend/src/components/ui/loading-button.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/UserSettings/UserInformation.tsx",
+      "target": "frontend/src/hooks/useAuth.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/UserSettings/UserInformation.tsx",
+      "target": "frontend/src/hooks/useCustomToast.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/UserSettings/UserInformation.tsx",
+      "target": "frontend/src/lib/utils.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/UserSettings/UserInformation.tsx",
+      "target": "frontend/src/utils.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/ui/alert.tsx",
+      "target": "frontend/src/lib/utils.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/ui/avatar.tsx",
+      "target": "frontend/src/lib/utils.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/ui/badge.tsx",
+      "target": "frontend/src/lib/utils.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/ui/button-group.tsx",
+      "target": "frontend/src/components/ui/separator.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/ui/button-group.tsx",
+      "target": "frontend/src/lib/utils.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/ui/button.tsx",
+      "target": "frontend/src/lib/utils.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/ui/card.tsx",
+      "target": "frontend/src/lib/utils.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/ui/checkbox.tsx",
+      "target": "frontend/src/lib/utils.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/ui/dialog.tsx",
+      "target": "frontend/src/lib/utils.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/ui/dropdown-menu.tsx",
+      "target": "frontend/src/lib/utils.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/ui/form.tsx",
+      "target": "frontend/src/components/ui/label.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/ui/form.tsx",
+      "target": "frontend/src/lib/utils.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/ui/input.tsx",
+      "target": "frontend/src/lib/utils.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/ui/label.tsx",
+      "target": "frontend/src/lib/utils.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/ui/loading-button.tsx",
+      "target": "frontend/src/lib/utils.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/ui/pagination.tsx",
+      "target": "frontend/src/components/ui/button.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/ui/pagination.tsx",
+      "target": "frontend/src/lib/utils.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/ui/password-input.tsx",
+      "target": "frontend/src/components/ui/button.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/ui/password-input.tsx",
+      "target": "frontend/src/lib/utils.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/ui/select.tsx",
+      "target": "frontend/src/lib/utils.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/ui/separator.tsx",
+      "target": "frontend/src/lib/utils.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/ui/sheet.tsx",
+      "target": "frontend/src/lib/utils.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/ui/sidebar.tsx",
+      "target": "frontend/src/components/ui/button.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/ui/sidebar.tsx",
+      "target": "frontend/src/components/ui/input.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/ui/sidebar.tsx",
+      "target": "frontend/src/components/ui/separator.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/ui/sidebar.tsx",
+      "target": "frontend/src/components/ui/sheet.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/ui/sidebar.tsx",
+      "target": "frontend/src/components/ui/skeleton.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/ui/sidebar.tsx",
+      "target": "frontend/src/components/ui/tooltip.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/ui/sidebar.tsx",
+      "target": "frontend/src/hooks/useMobile.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/ui/sidebar.tsx",
+      "target": "frontend/src/lib/utils.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/ui/skeleton.tsx",
+      "target": "frontend/src/lib/utils.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/ui/table.tsx",
+      "target": "frontend/src/lib/utils.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/ui/tabs.tsx",
+      "target": "frontend/src/lib/utils.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/components/ui/tooltip.tsx",
+      "target": "frontend/src/lib/utils.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/hooks/useAuth.ts",
+      "target": "frontend/src/client/index.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/hooks/useAuth.ts",
+      "target": "frontend/src/hooks/useCustomToast.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/hooks/useAuth.ts",
+      "target": "frontend/src/utils.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/main.tsx",
+      "target": "frontend/src/client/index.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/main.tsx",
+      "target": "frontend/src/components/theme-provider.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/main.tsx",
+      "target": "frontend/src/components/ui/sonner.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/main.tsx",
+      "target": "frontend/src/routeTree.gen.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/routeTree.gen.ts",
+      "target": "frontend/src/routes/__root.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/routeTree.gen.ts",
+      "target": "frontend/src/routes/_layout.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/routeTree.gen.ts",
+      "target": "frontend/src/routes/_layout/admin.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/routeTree.gen.ts",
+      "target": "frontend/src/routes/_layout/index.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/routeTree.gen.ts",
+      "target": "frontend/src/routes/_layout/items.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/routeTree.gen.ts",
+      "target": "frontend/src/routes/_layout/settings.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/routeTree.gen.ts",
+      "target": "frontend/src/routes/login.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/routeTree.gen.ts",
+      "target": "frontend/src/routes/recover-password.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/routeTree.gen.ts",
+      "target": "frontend/src/routes/reset-password.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/routeTree.gen.ts",
+      "target": "frontend/src/routes/signup.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/routes/__root.tsx",
+      "target": "frontend/src/components/Common/ErrorComponent.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/routes/__root.tsx",
+      "target": "frontend/src/components/Common/NotFound.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/routes/_layout.tsx",
+      "target": "frontend/src/components/Common/Footer.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/routes/_layout.tsx",
+      "target": "frontend/src/components/Sidebar/AppSidebar.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/routes/_layout.tsx",
+      "target": "frontend/src/components/ui/sidebar.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/routes/_layout.tsx",
+      "target": "frontend/src/hooks/useAuth.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/routes/_layout/admin.tsx",
+      "target": "frontend/src/client/index.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/routes/_layout/admin.tsx",
+      "target": "frontend/src/components/Admin/AddUser.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/routes/_layout/admin.tsx",
+      "target": "frontend/src/components/Admin/columns.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/routes/_layout/admin.tsx",
+      "target": "frontend/src/components/Common/DataTable.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/routes/_layout/admin.tsx",
+      "target": "frontend/src/components/Pending/PendingUsers.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/routes/_layout/admin.tsx",
+      "target": "frontend/src/hooks/useAuth.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/routes/_layout/index.tsx",
+      "target": "frontend/src/hooks/useAuth.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/routes/_layout/items.tsx",
+      "target": "frontend/src/client/index.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/routes/_layout/items.tsx",
+      "target": "frontend/src/components/Common/DataTable.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/routes/_layout/items.tsx",
+      "target": "frontend/src/components/Items/AddItem.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/routes/_layout/items.tsx",
+      "target": "frontend/src/components/Items/columns.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/routes/_layout/items.tsx",
+      "target": "frontend/src/components/Pending/PendingItems.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/routes/_layout/settings.tsx",
+      "target": "frontend/src/components/UserSettings/ChangePassword.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/routes/_layout/settings.tsx",
+      "target": "frontend/src/components/UserSettings/DeleteAccount.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/routes/_layout/settings.tsx",
+      "target": "frontend/src/components/UserSettings/UserInformation.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/routes/_layout/settings.tsx",
+      "target": "frontend/src/components/ui/tabs.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/routes/_layout/settings.tsx",
+      "target": "frontend/src/hooks/useAuth.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/routes/login.tsx",
+      "target": "frontend/src/client/index.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/routes/login.tsx",
+      "target": "frontend/src/components/Common/AuthLayout.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/routes/login.tsx",
+      "target": "frontend/src/components/ui/form.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/routes/login.tsx",
+      "target": "frontend/src/components/ui/input.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/routes/login.tsx",
+      "target": "frontend/src/components/ui/loading-button.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/routes/login.tsx",
+      "target": "frontend/src/components/ui/password-input.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/routes/login.tsx",
+      "target": "frontend/src/hooks/useAuth.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/routes/recover-password.tsx",
+      "target": "frontend/src/client/index.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/routes/recover-password.tsx",
+      "target": "frontend/src/components/Common/AuthLayout.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/routes/recover-password.tsx",
+      "target": "frontend/src/components/ui/form.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/routes/recover-password.tsx",
+      "target": "frontend/src/components/ui/input.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/routes/recover-password.tsx",
+      "target": "frontend/src/components/ui/loading-button.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/routes/recover-password.tsx",
+      "target": "frontend/src/hooks/useAuth.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/routes/recover-password.tsx",
+      "target": "frontend/src/hooks/useCustomToast.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/routes/recover-password.tsx",
+      "target": "frontend/src/utils.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/routes/reset-password.tsx",
+      "target": "frontend/src/client/index.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/routes/reset-password.tsx",
+      "target": "frontend/src/components/Common/AuthLayout.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/routes/reset-password.tsx",
+      "target": "frontend/src/components/ui/form.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/routes/reset-password.tsx",
+      "target": "frontend/src/components/ui/loading-button.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/routes/reset-password.tsx",
+      "target": "frontend/src/components/ui/password-input.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/routes/reset-password.tsx",
+      "target": "frontend/src/hooks/useAuth.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/routes/reset-password.tsx",
+      "target": "frontend/src/hooks/useCustomToast.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/routes/reset-password.tsx",
+      "target": "frontend/src/utils.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/routes/signup.tsx",
+      "target": "frontend/src/components/Common/AuthLayout.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/routes/signup.tsx",
+      "target": "frontend/src/components/ui/form.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/routes/signup.tsx",
+      "target": "frontend/src/components/ui/input.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/routes/signup.tsx",
+      "target": "frontend/src/components/ui/loading-button.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/routes/signup.tsx",
+      "target": "frontend/src/components/ui/password-input.tsx",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/routes/signup.tsx",
+      "target": "frontend/src/hooks/useAuth.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/src/utils.ts",
+      "target": "frontend/src/client/index.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/tests/admin.spec.ts",
+      "target": "frontend/tests/config.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/tests/admin.spec.ts",
+      "target": "frontend/tests/utils/privateApi.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/tests/admin.spec.ts",
+      "target": "frontend/tests/utils/random.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/tests/admin.spec.ts",
+      "target": "frontend/tests/utils/user.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/tests/auth.setup.ts",
+      "target": "frontend/tests/config.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/tests/items.spec.ts",
+      "target": "frontend/tests/utils/privateApi.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/tests/items.spec.ts",
+      "target": "frontend/tests/utils/random.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/tests/items.spec.ts",
+      "target": "frontend/tests/utils/user.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/tests/login.spec.ts",
+      "target": "frontend/tests/config.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/tests/login.spec.ts",
+      "target": "frontend/tests/utils/random.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/tests/reset-password.spec.ts",
+      "target": "frontend/tests/utils/mailcatcher.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/tests/reset-password.spec.ts",
+      "target": "frontend/tests/utils/random.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/tests/reset-password.spec.ts",
+      "target": "frontend/tests/utils/user.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/tests/sign-up.spec.ts",
+      "target": "frontend/tests/utils/random.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/tests/user-settings.spec.ts",
+      "target": "frontend/tests/config.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/tests/user-settings.spec.ts",
+      "target": "frontend/tests/utils/privateApi.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/tests/user-settings.spec.ts",
+      "target": "frontend/tests/utils/random.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/tests/user-settings.spec.ts",
+      "target": "frontend/tests/utils/user.ts",
+      "type": "import"
+    },
+    {
+      "source": "frontend/tests/utils/privateApi.ts",
+      "target": "frontend/src/client/index.ts",
+      "type": "import"
+    }
+  ]
+}
