@@ -6,9 +6,16 @@ import {
   Noise,
   Vignette,
 } from '@react-three/postprocessing'
+import { useFrame } from '@react-three/fiber'
 import { useMemo, useRef } from 'react'
 import * as THREE from 'three'
 import type { OrbitControls as OrbitControlsImpl } from 'three-stdlib'
+import {
+  type BlastState,
+  type ColorMode,
+  SWEEP_SECONDS,
+  type TimelineState,
+} from '../effects'
 import { VOID_COLOR } from '../palette'
 import type { Layout } from '../types'
 import { ClusterLabels } from './ClusterLabels'
@@ -19,6 +26,7 @@ import { FocusController, type CameraGoal } from './FocusController'
 import { Labels } from './Labels'
 import { Nodes } from './Nodes'
 import { Particles } from './Particles'
+import { Shockwave } from './Shockwave'
 
 interface ConstellationProps {
   layout: Layout
@@ -26,8 +34,25 @@ interface ConstellationProps {
   hoveredId: string | null
   /** dir of a cluster to fly to, with a sequence number to re-trigger */
   flyToCluster: { dir: string; seq: number } | null
+  colorMode: ColorMode
+  timeline: TimelineState
+  blastBox: { state: BlastState | null }
+  /** coarse flag from the UI: time-lapse engaged, hide the text layer */
+  timelineOn: boolean
   onHover: (id: string | null) => void
   onSelect: (id: string | null) => void
+}
+
+/** Advances the time-lapse era while playback is on. */
+function TimelineDriver({ layout, timeline }: { layout: Layout; timeline: TimelineState }) {
+  useFrame((_, delta) => {
+    const span = layout.history
+    if (!span || !timeline.playing || timeline.era === null) return
+    const rate = ((span.end - span.start) / SWEEP_SECONDS) * timeline.speed
+    timeline.era = Math.min(span.end, timeline.era + delta * rate)
+    if (timeline.era >= span.end) timeline.playing = false
+  })
+  return null
 }
 
 export function Constellation({
@@ -35,6 +60,10 @@ export function Constellation({
   selectedId,
   hoveredId,
   flyToCluster,
+  colorMode,
+  timeline,
+  blastBox,
+  timelineOn,
   onHover,
   onSelect,
 }: ConstellationProps) {
@@ -81,19 +110,42 @@ export function Constellation({
       <fog attach="fog" args={[VOID_COLOR, 220, 520]} />
       <Stars radius={320} depth={60} count={1700} factor={2.4} saturation={0.1} fade speed={0.4} />
       <Nebula layout={layout} />
+      <TimelineDriver layout={layout} timeline={timeline} />
 
       <group onPointerMissed={() => onSelect(null)}>
         <Nodes
           layout={layout}
           focusSet={focusSet}
           hoveredId={hoveredId}
+          colorMode={colorMode}
+          timeline={timeline}
+          blastBox={blastBox}
           onHover={onHover}
           onSelect={onSelect}
         />
-        <Edges layout={layout} curves={curves} focusSet={focusSet} />
-        <Particles layout={layout} curves={curves} focusSet={focusSet} />
-        <Labels layout={layout} focusSet={focusSet} selectedId={selectedId} />
-        <ClusterLabels layout={layout} focusSet={focusSet} />
+        <Edges
+          layout={layout}
+          curves={curves}
+          focusSet={focusSet}
+          colorMode={colorMode}
+          timeline={timeline}
+          blastBox={blastBox}
+        />
+        <Particles
+          layout={layout}
+          curves={curves}
+          focusSet={focusSet}
+          colorMode={colorMode}
+          timeline={timeline}
+        />
+        <Shockwave layout={layout} blastBox={blastBox} />
+        {/* the text layer reads as "now" — silence it while time travels */}
+        {!timelineOn && (
+          <>
+            <Labels layout={layout} focusSet={focusSet} selectedId={selectedId} />
+            <ClusterLabels layout={layout} focusSet={focusSet} />
+          </>
+        )}
       </group>
 
       <OrbitControls

@@ -1,8 +1,9 @@
-"""Repo ingestion pipeline: shallow clone -> walk -> import graph -> significance.
+"""Repo ingestion pipeline: blob-less clone -> walk -> import graph -> significance.
 
 Output contract (consumed by the 3D constellation renderer):
-    nodes: [{ id, name, dir, loc, language, significance }]
+    nodes: [{ id, name, dir, loc, language, significance, born, edits, heat }]
     edges: [{ source, target, type }]
+    history: { start, end, commits }
 """
 
 import math
@@ -14,6 +15,7 @@ import subprocess
 import tempfile
 from collections import Counter, defaultdict
 
+import history
 import parsers
 import semantics
 
@@ -66,8 +68,11 @@ class CloneError(Exception):
 # ---------------------------------------------------------------------------
 
 def _clone(repo_url: str, dest: str) -> None:
+    # blob:none keeps the full commit/tree history (for the time-lapse) while
+    # only downloading file contents for HEAD — nearly depth-1 transfer cost.
+    # Servers without partial-clone support just fall back to a full clone.
     cmd = [
-        "git", "clone", "--depth", "1", "--single-branch", "--no-tags",
+        "git", "clone", "--filter=blob:none", "--single-branch", "--no-tags",
         "-c", "core.longpaths=true", "--", repo_url, dest,
     ]
     env = {**os.environ, "GIT_TERMINAL_PROMPT": "0"}
@@ -286,6 +291,7 @@ def build_graph(root: str) -> dict:
     edges = _extract_edges(root, sources, languages, py_roots, js_roots)
     significance = _significance(sorted(sources), edges)
     extras, clusters = semantics.enrich(sources, languages, edges, significance)
+    file_history, span = history.mine_history(root, set(sources))
 
     nodes = [
         {
@@ -297,6 +303,7 @@ def build_graph(root: str) -> dict:
             "significance": significance[rel],
             "role": extras[rel]["role"],
             "description": extras[rel]["description"],
+            **file_history.get(rel, {}),
         }
         for rel in sorted(sources)
     ]
@@ -304,4 +311,7 @@ def build_graph(root: str) -> dict:
         {"source": src, "target": dst, "type": "import"}
         for src, dst in sorted(edges)
     ]
-    return {"nodes": nodes, "edges": edge_list, "clusters": clusters}
+    out = {"nodes": nodes, "edges": edge_list, "clusters": clusters}
+    if span:
+        out["history"] = span
+    return out

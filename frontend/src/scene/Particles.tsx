@@ -1,6 +1,7 @@
 import { useFrame } from '@react-three/fiber'
 import { useEffect, useMemo, useRef } from 'react'
 import * as THREE from 'three'
+import { type ColorMode, heatColor, type TimelineState } from '../effects'
 import { languageColor } from '../palette'
 import type { Layout } from '../types'
 import { CURVE_SEGMENTS, type CurveSet, makeGlowTexture } from './curves'
@@ -9,6 +10,8 @@ interface ParticlesProps {
   layout: Layout
   curves: CurveSet
   focusSet: Set<string> | null
+  colorMode: ColorMode
+  timeline: TimelineState
 }
 
 const MAX_HEADS = 1400
@@ -21,9 +24,20 @@ const TRAIL_LAG = 0.022
  * Comets travelling source -> target along each curve: the direction of every
  * dependency is readable at a glance, and the sky visibly "flows".
  */
-export function Particles({ layout, curves, focusSet }: ParticlesProps) {
+export function Particles({ layout, curves, focusSet, colorMode, timeline }: ParticlesProps) {
   const geometryRef = useRef<THREE.BufferGeometry>(null!)
-  const texture = useMemo(makeGlowTexture, [])
+  const texture = useMemo(() => makeGlowTexture(), [])
+
+  // No comet may travel an arc whose stars haven't been born yet.
+  const edgeBorn = useMemo(() => {
+    const start = layout.history?.start ?? 0
+    return layout.edges.map((e) =>
+      Math.max(
+        layout.byId.get(e.source)!.born ?? start,
+        layout.byId.get(e.target)!.born ?? start,
+      ),
+    )
+  }, [layout])
 
   const { count, edgeOf, phase, speed, positions, colors } = useMemo(() => {
     const perEdge = Math.max(1, Math.min(2, Math.floor(MAX_HEADS / Math.max(1, curves.edgeCount))))
@@ -57,7 +71,9 @@ export function Particles({ layout, curves, focusSet }: ParticlesProps) {
       const edge = layout.edges[edgeOf[i]]
       const touching =
         !focusSet || (focusSet.has(edge.source) && focusSet.has(edge.target))
-      c.copy(languageColor(layout.byId.get(edge.target)!.language))
+      const target = layout.byId.get(edge.target)!
+      if (colorMode === 'heat') heatColor(target.heat ?? 0, c)
+      else c.copy(languageColor(target.language))
       c.lerp(new THREE.Color('#ffffff'), 0.35)
       c.multiplyScalar(focusSet ? (touching ? 1.6 : 0) : 0.85)
       for (let t = 0; t < TRAIL; t += 1) {
@@ -69,13 +85,24 @@ export function Particles({ layout, curves, focusSet }: ParticlesProps) {
     }
     const attr = geometryRef.current.getAttribute('color') as THREE.BufferAttribute
     if (attr) attr.needsUpdate = true
-  }, [layout, count, edgeOf, colors, focusSet])
+  }, [layout, count, edgeOf, colors, focusSet, colorMode])
 
   useFrame((_, delta) => {
     const stride = (CURVE_SEGMENTS + 1) * 3
     const dt = Math.min(delta, 0.05)
+    const era = layout.history ? timeline.era : null
     for (let i = 0; i < count; i += 1) {
       phase[i] = (phase[i] + dt * speed[i]) % 1
+      if (era !== null && edgeBorn[edgeOf[i]] > era) {
+        // edge not born yet: park the comet far outside the fog
+        for (let t = 0; t < TRAIL; t += 1) {
+          const w = (i * TRAIL + t) * 3
+          positions[w] = 0
+          positions[w + 1] = -1e5
+          positions[w + 2] = 0
+        }
+        continue
+      }
       for (let t = 0; t < TRAIL; t += 1) {
         const p = phase[i] - t * TRAIL_LAG
         const clamped = Math.max(0, Math.min(1, p < 0 ? p + 1 : p))

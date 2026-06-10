@@ -9,6 +9,12 @@ export interface GraphNode {
   role?: string
   /** mined from docstrings / leading comments / exported symbols */
   description?: string
+  /** unix time of the commit that introduced this file */
+  born?: number
+  /** downsampled unix times of commits that touched it */
+  edits?: number[]
+  /** 0..1 recency-weighted churn — how actively this file still burns */
+  heat?: number
 }
 
 export interface GraphEdge {
@@ -27,10 +33,18 @@ export interface Cluster {
   anchor: string
 }
 
+/** Commit-history envelope: the sky's first and last moments. */
+export interface HistorySpan {
+  start: number
+  end: number
+  commits: number
+}
+
 export interface Graph {
   nodes: GraphNode[]
   edges: GraphEdge[]
   clusters?: Cluster[]
+  history?: HistorySpan
 }
 
 /** A node after the force layout has settled. */
@@ -61,4 +75,5 @@ export interface Layout {
   neighbours: Map<string, Set<string>>
   inDegree: Map<string, number>
   outDegree: Map<string, number>
+  history?: HistorySpan
 }

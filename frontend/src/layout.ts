@@ -151,7 +151,10 @@ export async function runLayout(
   }
 
   const positioned: PositionedNode[] = nodes.map((n) => {
-    const { vx: _vx, vy: _vy, vz: _vz, ...rest } = n
+    const rest = { ...n }
+    delete rest.vx
+    delete rest.vy
+    delete rest.vz
     return rest
   })
 
@@ -186,5 +189,6 @@ export async function runLayout(
     neighbours,
     inDegree,
     outDegree,
+    history: graph.history,
   }
 }

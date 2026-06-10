@@ -38,6 +38,10 @@ class Node(BaseModel):
     significance: float = Field(ge=0.0, le=1.0)
     role: str
     description: str
+    # git history (absent when the repo has none, e.g. grafted clones)
+    born: int | None = None
+    edits: list[int] | None = None
+    heat: float | None = Field(default=None, ge=0.0, le=1.0)
 
 
 class Edge(BaseModel):
@@ -56,10 +60,17 @@ class Cluster(BaseModel):
     anchor: str
 
 
+class HistorySpan(BaseModel):
+    start: int
+    end: int
+    commits: int
+
+
 class Graph(BaseModel):
     nodes: list[Node]
     edges: list[Edge]
     clusters: list[Cluster]
+    history: HistorySpan | None = None
 
 
 @app.get("/health")

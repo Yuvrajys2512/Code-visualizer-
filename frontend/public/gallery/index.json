@@ -1,0 +1,26 @@
+[
+ {
+  "name": "flask",
+  "repo": "https://github.com/pallets/flask",
+  "blurb": "Pallets' micro web framework \u2014 15 years of history",
+  "file": "flask.json"
+ },
+ {
+  "name": "express",
+  "repo": "https://github.com/expressjs/express",
+  "blurb": "the Node.js web framework that started it all",
+  "file": "express.json"
+ },
+ {
+  "name": "httpx",
+  "repo": "https://github.com/encode/httpx",
+  "blurb": "modern async HTTP client for Python",
+  "file": "httpx.json"
+ },
+ {
+  "name": "vue core",
+  "repo": "https://github.com/vuejs/core",
+  "blurb": "Vue 3's reactivity engine and compiler",
+  "file": "vue-core.json"
+ }
+]

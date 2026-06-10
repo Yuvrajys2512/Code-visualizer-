@@ -24,3 +24,27 @@ export async function loadSampleGraph(): Promise<Graph> {
   if (!res.ok) throw new Error('sample graph not found')
   return res.json()
 }
+
+/** A famous repo, pre-analyzed and bundled — the wow with zero waiting. */
+export interface GalleryEntry {
+  name: string
+  repo: string
+  file: string
+  blurb: string
+}
+
+export async function loadGalleryIndex(): Promise<GalleryEntry[]> {
+  try {
+    const res = await fetch('/gallery/index.json')
+    if (!res.ok) return []
+    return await res.json()
+  } catch {
+    return []
+  }
+}
+
+export async function loadGalleryGraph(file: string): Promise<Graph> {
+  const res = await fetch(`/gallery/${file}`)
+  if (!res.ok) throw new Error('gallery graph not found')
+  return res.json()
+}

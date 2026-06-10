@@ -1,6 +1,10 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
+import { type GalleryEntry, loadGalleryIndex } from '../api'
+import { isMuted, setMuted } from '../audio'
+import { type ColorMode, heatColorHex, type TimelineState } from '../effects'
 import { languageColorHex } from '../palette'
 import type { Layout } from '../types'
+import { TimelineBar } from './TimelineBar'
 
 export type Status =
   | { kind: 'idle' }
@@ -9,12 +13,26 @@ export type Status =
   | { kind: 'ready' }
   | { kind: 'error'; message: string }
 
+export interface BlastInfo {
+  originId: string
+  affected: number
+  share: number
+}
+
 interface OverlayProps {
   status: Status
   layout: Layout | null
   selectedId: string | null
   hoveredId: string | null
+  colorMode: ColorMode
+  timeline: TimelineState
+  timelineOn: boolean
+  blastInfo: BlastInfo | null
   onIngest: (url: string) => void
+  onGallery: (file: string) => void
+  onColorMode: (mode: ColorMode) => void
+  onTimelineOn: (on: boolean) => void
+  onBlast: () => void
   onFlyToCluster: (dir: string) => void
 }
 
@@ -23,11 +41,25 @@ export function Overlay({
   layout,
   selectedId,
   hoveredId,
+  colorMode,
+  timeline,
+  timelineOn,
+  blastInfo,
   onIngest,
+  onGallery,
+  onColorMode,
+  onTimelineOn,
+  onBlast,
   onFlyToCluster,
 }: OverlayProps) {
   const [url, setUrl] = useState('https://github.com/fastapi/full-stack-fastapi-template')
+  const [gallery, setGallery] = useState<GalleryEntry[]>([])
+  const [muted, setMutedState] = useState(isMuted)
   const busy = status.kind === 'ingesting' || status.kind === 'layout'
+
+  useEffect(() => {
+    void loadGalleryIndex().then(setGallery)
+  }, [])
 
   const languages = useMemo(() => {
     if (!layout) return []
@@ -36,10 +68,21 @@ export function Overlay({
     return [...counts.entries()].sort((a, b) => b[1] - a[1])
   }, [layout])
 
+  const hasHeat = useMemo(
+    () => !!layout && layout.nodes.some((n) => n.heat !== undefined),
+    [layout],
+  )
+
   const inspected = useMemo(() => {
     const id = hoveredId ?? selectedId
     return id && layout ? layout.byId.get(id) ?? null : null
   }, [layout, hoveredId, selectedId])
+
+  const toggleMute = () => {
+    const next = !muted
+    setMuted(next)
+    setMutedState(next)
+  }
 
   return (
     <div className="overlay">
@@ -68,19 +111,55 @@ export function Overlay({
           <>
             <p className="stats">
               {layout.nodes.length} files · {layout.edges.length} imports
+              {layout.history && <> · {layout.history.commits.toLocaleString()} commits</>}
             </p>
-            <div className="legend">
-              {languages.map(([lang, count]) => (
-                <span key={lang} className="chip">
-                  <i style={{ background: languageColorHex(lang) }} />
-                  {lang} <em>{count}</em>
+            {hasHeat && (
+              <div className="mode-toggle">
+                <button
+                  className={colorMode === 'language' ? 'on' : ''}
+                  onClick={() => onColorMode('language')}
+                >
+                  spectral
+                </button>
+                <button
+                  className={colorMode === 'heat' ? 'on' : ''}
+                  onClick={() => onColorMode('heat')}
+                  title="recently-edited files burn bright; untouched code cools"
+                >
+                  activity
+                </button>
+              </div>
+            )}
+            {colorMode === 'language' ? (
+              <div className="legend">
+                {languages.map(([lang, count]) => (
+                  <span key={lang} className="chip">
+                    <i style={{ background: languageColorHex(lang) }} />
+                    {lang} <em>{count}</em>
+                  </span>
+                ))}
+              </div>
+            ) : (
+              <div className="legend">
+                <span className="chip">
+                  <i style={{ background: heatColorHex(0.05) }} /> dormant
                 </span>
-              ))}
-            </div>
+                <span className="chip">
+                  <i style={{ background: heatColorHex(0.6) }} /> active
+                </span>
+                <span className="chip">
+                  <i style={{ background: heatColorHex(1) }} /> burning
+                </span>
+              </div>
+            )}
             <p className="hint">drag to orbit · scroll to dive · click a star to focus · click the void to release</p>
           </>
         )}
       </div>
+
+      <button className="panel sound-toggle" onClick={toggleMute} title={muted ? 'unmute' : 'mute'}>
+        {muted ? '🔇' : '🔊'}
+      </button>
 
       {layout && status.kind === 'ready' && layout.clusters.length > 0 && (
         <div className="panel atlas">
@@ -101,6 +180,15 @@ export function Overlay({
         </div>
       )}
 
+      {layout?.history && status.kind === 'ready' && (
+        <TimelineBar
+          span={layout.history}
+          timeline={timeline}
+          timelineOn={timelineOn}
+          onTimelineOn={onTimelineOn}
+        />
+      )}
+
       {inspected && (
         <div className="panel inspector">
           <div className="inspector-title">
@@ -119,6 +207,14 @@ export function Overlay({
             <span>{inspected.loc} loc</span>
             <span>{layout!.inDegree.get(inspected.id)} imported by</span>
             <span>{layout!.outDegree.get(inspected.id)} imports</span>
+            {inspected.born && (
+              <span>
+                born {new Date(inspected.born * 1000).toLocaleDateString(undefined, {
+                  month: 'short',
+                  year: 'numeric',
+                })}
+              </span>
+            )}
           </div>
           <div className="sig-bar">
             <div
@@ -130,6 +226,20 @@ export function Overlay({
             />
           </div>
           <p className="sig-caption">significance {inspected.significance.toFixed(2)}</p>
+          {selectedId === inspected.id && (
+            <>
+              <button className="blast-btn" onClick={onBlast}>
+                ◉ detonate — show blast radius
+              </button>
+              {blastInfo && blastInfo.originId === inspected.id && (
+                <p className="blast-result">
+                  a change here ripples through <strong>{blastInfo.affected}</strong>{' '}
+                  {blastInfo.affected === 1 ? 'file' : 'files'} —{' '}
+                  {Math.round(blastInfo.share * 100)}% of the sky
+                </p>
+              )}
+            </>
+          )}
         </div>
       )}
 
@@ -147,6 +257,23 @@ export function Overlay({
       {status.kind === 'idle' && (
         <div className="veil idle">
           <p>point it at a repository and watch the architecture appear</p>
+          {gallery.length > 0 && (
+            <div className="gallery">
+              <span className="gallery-title">or step into a famous sky</span>
+              <div className="gallery-row">
+                {gallery.map((entry) => (
+                  <button
+                    key={entry.file}
+                    className="gallery-card"
+                    title={entry.blurb}
+                    onClick={() => onGallery(entry.file)}
+                  >
+                    {entry.name}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       )}
     </div>
