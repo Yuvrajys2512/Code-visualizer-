@@ -73,14 +73,15 @@ export function smoothstep01(x: number): number {
 }
 
 // ---------------------------------------------------------------------------
-// Churn heat palette: cold ember -> molten -> white-hot
+// Churn heat palette: charcoal -> accent blue -> ice white. Stays inside the
+// obsidian one-accent system: activity is literally how charged a file is.
 // ---------------------------------------------------------------------------
 
 const HEAT_STOPS: [number, THREE.Color][] = [
-  [0.0, new THREE.Color('#2c2030')],
-  [0.35, new THREE.Color('#8a2f1d')],
-  [0.7, new THREE.Color('#ff7a36')],
-  [1.0, new THREE.Color('#ffeed2')],
+  [0.0, new THREE.Color('#33363c')],
+  [0.4, new THREE.Color('#41598f')],
+  [0.75, new THREE.Color('#5b8cff')],
+  [1.0, new THREE.Color('#e8f0ff')],
 ]
 
 export function heatColor(heat: number, out: THREE.Color): THREE.Color {

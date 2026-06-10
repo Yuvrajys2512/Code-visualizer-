@@ -1,10 +1,10 @@
 import * as THREE from 'three'
 
 /**
- * Star surface: white-hot core fading through the instance colour into a
- * fresnel limb glow. Reads as a plasma orb at any distance — never a flat
- * disc. Instance colours carry HDR multipliers, so only genuinely
- * significant stars push past the bloom threshold.
+ * Node surface: a soft matte sphere lit from above-camera with a thin
+ * fresnel rim — reads as a clean physical object, not a glowing plasma orb.
+ * Instance colours stay near [0..1.4]; only hover/selection pushes past the
+ * bloom threshold, so glow is a deliberate signal rather than ambience.
  */
 export function createStarMaterial(): THREE.ShaderMaterial {
   return new THREE.ShaderMaterial({
@@ -28,13 +28,17 @@ export function createStarMaterial(): THREE.ShaderMaterial {
       varying vec3 vNormalW;
       varying vec3 vViewW;
       void main() {
-        float facing = clamp(dot(normalize(vNormalW), normalize(vViewW)), 0.0, 1.0);
-        float core = smoothstep(0.42, 1.0, facing);
-        float rim = pow(1.0 - facing, 2.1);
-        vec3 base = vColor * (0.20 + 0.55 * facing);
-        vec3 hot = mix(vColor, vec3(1.0), 0.72) * core * core * 1.55;
-        vec3 glow = vColor * rim * 0.95;
-        gl_FragColor = vec4(base + hot + glow, 1.0);
+        vec3 n = normalize(vNormalW);
+        vec3 v = normalize(vViewW);
+        float facing = clamp(dot(n, v), 0.0, 1.0);
+        // key light slightly above the camera for gentle modelling
+        vec3 l = normalize(v + vec3(0.0, 0.6, 0.0));
+        float diffuse = clamp(dot(n, l), 0.0, 1.0);
+        float rim = pow(1.0 - facing, 3.0);
+        vec3 base = vColor * (0.30 + 0.62 * diffuse);
+        vec3 sheen = vColor * pow(diffuse, 8.0) * 0.35;
+        vec3 edge = vColor * rim * 0.5;
+        gl_FragColor = vec4(base + sheen + edge, 1.0);
         #include <tonemapping_fragment>
         #include <colorspace_fragment>
       }
@@ -43,8 +47,8 @@ export function createStarMaterial(): THREE.ShaderMaterial {
 }
 
 /**
- * Atmospheric halo rendered as oversized soft points behind each star —
- * the air-glow a long-exposure photo would catch.
+ * Restrained halo: a tight soft disc behind each node. At rest it is barely
+ * a breath of light; hover and selection are what switch it on.
  */
 export function createHaloMaterial(): THREE.ShaderMaterial {
   return new THREE.ShaderMaterial({
@@ -58,7 +62,7 @@ export function createHaloMaterial(): THREE.ShaderMaterial {
       void main() {
         vColor = aColor;
         vec4 mv = modelViewMatrix * vec4(position, 1.0);
-        gl_PointSize = min(aSize * (260.0 / -mv.z), 320.0);
+        gl_PointSize = min(aSize * (200.0 / -mv.z), 220.0);
         gl_Position = projectionMatrix * mv;
       }
     `,
@@ -67,31 +71,11 @@ export function createHaloMaterial(): THREE.ShaderMaterial {
       void main() {
         vec2 uv = gl_PointCoord * 2.0 - 1.0;
         float d = length(uv);
-        float a = exp(-d * d * 3.2) * smoothstep(1.0, 0.78, d);
+        float a = exp(-d * d * 4.5) * smoothstep(1.0, 0.7, d);
         gl_FragColor = vec4(vColor * a, a);
         #include <tonemapping_fragment>
         #include <colorspace_fragment>
       }
     `,
   })
-}
-
-/** Soft radial texture shared by nebula sprites and dust. */
-export function makeNebulaTexture(stops: [number, string][] = [
-  [0, 'rgba(255,255,255,0.85)'],
-  [0.4, 'rgba(255,255,255,0.28)'],
-  [1, 'rgba(255,255,255,0)'],
-]): THREE.Texture {
-  const size = 256
-  const canvas = document.createElement('canvas')
-  canvas.width = size
-  canvas.height = size
-  const ctx = canvas.getContext('2d')!
-  const g = ctx.createRadialGradient(size / 2, size / 2, 0, size / 2, size / 2, size / 2)
-  for (const [offset, color] of stops) g.addColorStop(offset, color)
-  ctx.fillStyle = g
-  ctx.fillRect(0, 0, size, size)
-  const texture = new THREE.CanvasTexture(canvas)
-  texture.colorSpace = THREE.SRGBColorSpace
-  return texture
 }

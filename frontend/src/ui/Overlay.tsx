@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { type GalleryEntry, loadGalleryIndex } from '../api'
 import { isMuted, setMuted } from '../audio'
 import { type ColorMode, heatColorHex, type TimelineState } from '../effects'
-import { languageColorHex } from '../palette'
+import { ACCENT_COLOR, languageColorHex } from '../palette'
 import type { Layout } from '../types'
 import { TimelineBar } from './TimelineBar'
 
@@ -221,7 +221,7 @@ export function Overlay({
               className="sig-fill"
               style={{
                 width: `${Math.round(inspected.significance * 100)}%`,
-                background: languageColorHex(inspected.language),
+                background: ACCENT_COLOR,
               }}
             />
           </div>

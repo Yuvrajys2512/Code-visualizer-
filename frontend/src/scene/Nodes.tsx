@@ -12,7 +12,7 @@ import {
   smoothstep01,
   type TimelineState,
 } from '../effects'
-import { languageColor } from '../palette'
+import { ACCENT_COLOR, languageColor } from '../palette'
 import type { Layout } from '../types'
 import { createHaloMaterial, createStarMaterial } from './materials'
 
@@ -29,8 +29,9 @@ interface NodesProps {
 
 const tmpMatrix = new THREE.Matrix4()
 const tmpColor = new THREE.Color()
-const DIM = new THREE.Color('#0e1322')
+const DIM = new THREE.Color('#17181c')
 const WHITE = new THREE.Color('#ffffff')
+const ACCENT = new THREE.Color(ACCENT_COLOR)
 
 export function Nodes({
   layout,
@@ -69,7 +70,7 @@ export function Nodes({
       positions[node.index * 3] = node.x
       positions[node.index * 3 + 1] = node.y
       positions[node.index * 3 + 2] = node.z
-      sizes[node.index] = node.radius * (6.5 + node.significance * 4)
+      sizes[node.index] = node.radius * (4 + node.significance * 2.5)
     }
     return { positions, sizes, colors: new Float32Array(layout.nodes.length * 3) }
   }, [layout])
@@ -151,27 +152,33 @@ export function Nodes({
       }
 
       // -- compose colour ---------------------------------------------------
+      // Hierarchy lives in lightness: significant files drift toward white,
+      // minor ones stay tinted grey. Only hover/flares push past 1.0.
       if (!inFocus) {
         tmpColor.copy(DIM)
       } else {
         if (colorMode === 'heat') {
           heatColor(node.heat ?? 0, tmpColor)
-          tmpColor.multiplyScalar(0.5 + (node.heat ?? 0) * 2.9)
+          tmpColor.multiplyScalar(0.7 + (node.heat ?? 0) * 0.7)
         } else {
           tmpColor.copy(languageColor(node.language))
-          tmpColor.multiplyScalar(0.75 + node.significance * 2.6)
+          tmpColor.lerp(WHITE, 0.12 + node.significance * 0.55)
+          tmpColor.multiplyScalar(0.55 + node.significance * 0.65)
         }
-        if (hovered) tmpColor.multiplyScalar(1.55)
-        tmpColor.multiplyScalar(vis * (1 + flare * 1.6) * blastDim)
+        if (hovered) {
+          tmpColor.lerp(ACCENT, 0.55)
+          tmpColor.multiplyScalar(1.7)
+        }
+        tmpColor.multiplyScalar(vis * (1 + flare * 1.2) * blastDim)
         if (blastBoost > 0) {
           tmpColor.lerp(WHITE, Math.min(1, blastBoost * 0.45))
-          tmpColor.multiplyScalar(1 + blastBoost * 2.4)
+          tmpColor.multiplyScalar(1 + blastBoost * 1.8)
         }
       }
       mesh.setColorAt(i, tmpColor)
 
       // -- compose scale ----------------------------------------------------
-      const pulse = 1 + Math.sin(t * 1.1 + pulsePhases[i]) * 0.045
+      const pulse = 1 + Math.sin(t * 1.1 + pulsePhases[i]) * 0.018
       const swell =
         (inFocus ? (hovered ? 1.18 : 1) : 0.62) *
         vis *
@@ -182,13 +189,14 @@ export function Nodes({
       tmpMatrix.setPosition(node.x, node.y, node.z)
       mesh.setMatrixAt(i, tmpMatrix)
 
-      // -- halo follows the star but stays atmospheric ----------------------
-      if (colorMode === 'heat') heatColor(node.heat ?? 0, tmpColor)
+      // -- halo: silent at rest, a clear accent ring when pointed at -------
+      if (hovered) tmpColor.copy(ACCENT)
+      else if (colorMode === 'heat') heatColor(node.heat ?? 0, tmpColor)
       else tmpColor.copy(languageColor(node.language))
       const haloLevel = !inFocus
-        ? 0.004
-        : (0.045 + node.significance * 0.12) *
-          (hovered ? 2 : 1) *
+        ? 0.0
+        : (0.012 + node.significance * 0.04) *
+          (hovered ? 6 : 1) *
           vis *
           (1 + flare * 1.2 + blastBoost * 2) *
           blastDim

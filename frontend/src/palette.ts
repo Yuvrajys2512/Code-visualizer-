@@ -1,27 +1,33 @@
 import * as THREE from 'three'
 
-/** Neon-on-void palette. Hues are spaced so neighbouring clusters read apart. */
+/**
+ * Obsidian palette: quiet, desaturated tints on near-black. Languages stay
+ * distinguishable but never shout — brightness (significance) carries the
+ * hierarchy, and a single electric-blue accent marks anything interactive.
+ */
 export const LANGUAGE_COLORS: Record<string, string> = {
-  python: '#3ddbd9',
-  typescript: '#6ea8ff',
-  javascript: '#ffd166',
-  go: '#4cc9f0',
-  java: '#ff9e64',
-  vue: '#42d392',
-  svelte: '#ff6537',
-  ruby: '#ff6b81',
-  rust: '#f0a98e',
-  kotlin: '#c792ea',
-  swift: '#ffb86c',
-  scala: '#e25555',
-  c: '#b48ead',
-  cpp: '#b48ead',
-  csharp: '#a78bfa',
-  php: '#8893d6',
+  python: '#8fbcb2',
+  typescript: '#8aa3cf',
+  javascript: '#c9b98a',
+  go: '#86afc4',
+  java: '#c4a183',
+  vue: '#8fb89a',
+  svelte: '#c49180',
+  ruby: '#c08c98',
+  rust: '#bb9c8c',
+  kotlin: '#a796c4',
+  swift: '#c4a98a',
+  scala: '#b78d8d',
+  c: '#a497b1',
+  cpp: '#a497b1',
+  csharp: '#a29ac4',
+  php: '#949cc0',
 }
 
-export const DEFAULT_COLOR = '#9aa5b8'
-export const VOID_COLOR = '#06070f'
+export const DEFAULT_COLOR = '#9aa0ab'
+export const VOID_COLOR = '#0a0a0c'
+/** The one accent: hover, selection, focus, controls. */
+export const ACCENT_COLOR = '#5b8cff'
 
 const cache = new Map<string, THREE.Color>()
 

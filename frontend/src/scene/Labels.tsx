@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import { languageColorHex } from '../palette'
+import { ACCENT_COLOR } from '../palette'
 import type { Layout, PositionedNode } from '../types'
 import { FadingLabel } from './FadingLabel'
 
@@ -40,9 +40,9 @@ export function Labels({ layout, focusSet, selectedId }: LabelsProps) {
             key={node.id}
             position={[node.x, node.y + node.radius + 2.1, node.z]}
             text={node.name}
-            fontSize={emphasised ? 2.9 : 1.9 + node.significance * 0.9}
-            color={emphasised ? '#ffffff' : languageColorHex(node.language)}
-            baseOpacity={emphasised ? 1 : 0.8}
+            fontSize={emphasised ? 2.7 : 1.8 + node.significance * 0.8}
+            color={emphasised ? ACCENT_COLOR : '#c4c9d2'}
+            baseOpacity={emphasised ? 1 : 0.72}
             bold={emphasised}
             near={node.radius * 6 + 6}
             far={210}

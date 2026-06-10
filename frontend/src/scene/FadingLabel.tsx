@@ -3,8 +3,8 @@ import { useFrame } from '@react-three/fiber'
 import { useRef } from 'react'
 import * as THREE from 'three'
 
-export const LABEL_FONT = '/fonts/SpaceGrotesk-500.ttf'
-export const LABEL_FONT_BOLD = '/fonts/SpaceGrotesk-700.ttf'
+export const LABEL_FONT = '/fonts/JetBrainsMono-Regular.ttf'
+export const LABEL_FONT_BOLD = '/fonts/JetBrainsMono-Medium.ttf'
 
 interface FadingLabelProps {
   position: [number, number, number]

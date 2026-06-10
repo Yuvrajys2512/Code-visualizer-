@@ -1,4 +1,3 @@
-import { languageColorHex } from '../palette'
 import type { Layout } from '../types'
 import { FadingLabel } from './FadingLabel'
 
@@ -26,9 +25,9 @@ export function ClusterLabels({ layout, focusSet }: ClusterLabelsProps) {
           text={cluster.label}
           subText={cluster.kind || undefined}
           fontSize={2.3 + Math.log2(1 + cluster.count) * 0.55}
-          color="#e6edf9"
-          subColor={languageColorHex(cluster.language)}
-          baseOpacity={0.55}
+          color="#edeff3"
+          subColor="#82878f"
+          baseOpacity={0.5}
           bold
           near={Math.max(26, cluster.radius * 1.15)}
           far={330}

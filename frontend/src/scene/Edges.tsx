@@ -10,9 +10,12 @@ import {
   smoothstep01,
   type TimelineState,
 } from '../effects'
-import { languageColor } from '../palette'
+import { ACCENT_COLOR } from '../palette'
 import type { Layout } from '../types'
 import { CURVE_SEGMENTS, type CurveSet } from './curves'
+
+const EDGE_GREY = new THREE.Color('#aab2bf')
+const EDGE_ACCENT = new THREE.Color(ACCENT_COLOR)
 
 interface EdgesProps {
   layout: Layout
@@ -74,6 +77,9 @@ export function Edges({ layout, curves, focusSet, colorMode, timeline, blastBox 
     )
   }, [layout])
 
+  // Hairline grey at rest — the weave is structure, not decoration. Edges
+  // touching the focused node switch to the accent; in heat mode an arc
+  // carries the warmer endpoint's charge so hot paths read at a glance.
   useEffect(() => {
     const sc = new THREE.Color()
     const tc = new THREE.Color()
@@ -83,19 +89,22 @@ export function Edges({ layout, curves, focusSet, colorMode, timeline, blastBox 
       const edge = layout.edges[e]
       const touching =
         !focusSet || (focusSet.has(edge.source) && focusSet.has(edge.target))
-      const brightness = focusSet ? (touching ? 0.55 : 0.018) : 0.16
-      const src = layout.byId.get(edge.source)!
-      const dst = layout.byId.get(edge.target)!
-      if (colorMode === 'heat') {
+      const brightness = focusSet ? (touching ? 0.7 : 0.012) : 0.16
+      if (focusSet && touching) {
+        sc.copy(EDGE_ACCENT)
+        tc.copy(EDGE_ACCENT)
+      } else if (colorMode === 'heat') {
+        const src = layout.byId.get(edge.source)!
+        const dst = layout.byId.get(edge.target)!
         heatColor(src.heat ?? 0, sc)
         heatColor(dst.heat ?? 0, tc)
       } else {
-        sc.copy(languageColor(src.language))
-        tc.copy(languageColor(dst.language))
+        sc.copy(EDGE_GREY)
+        tc.copy(EDGE_GREY)
       }
       for (let i = 0; i < CURVE_SEGMENTS; i += 1) {
         for (const frac of [i / CURVE_SEGMENTS, (i + 1) / CURVE_SEGMENTS]) {
-          // taper: brightest at mid-arc, fading into the stars at each end
+          // taper: brightest at mid-arc, fading into the nodes at each end
           const taper = 0.4 + 0.6 * Math.sin(Math.PI * frac)
           mixed.copy(sc).lerp(tc, frac).multiplyScalar(brightness * taper)
           baseColors[w] = mixed.r

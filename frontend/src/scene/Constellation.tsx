@@ -1,14 +1,7 @@
-import { OrbitControls, Stars } from '@react-three/drei'
-import {
-  Bloom,
-  ChromaticAberration,
-  EffectComposer,
-  Noise,
-  Vignette,
-} from '@react-three/postprocessing'
+import { OrbitControls } from '@react-three/drei'
+import { Bloom, EffectComposer, Vignette } from '@react-three/postprocessing'
 import { useFrame } from '@react-three/fiber'
 import { useMemo, useRef } from 'react'
-import * as THREE from 'three'
 import type { OrbitControls as OrbitControlsImpl } from 'three-stdlib'
 import {
   type BlastState,
@@ -19,7 +12,6 @@ import {
 import { VOID_COLOR } from '../palette'
 import type { Layout } from '../types'
 import { ClusterLabels } from './ClusterLabels'
-import { Nebula } from './Nebula'
 import { buildCurves } from './curves'
 import { Edges } from './Edges'
 import { FocusController, type CameraGoal } from './FocusController'
@@ -106,10 +98,9 @@ export function Constellation({
 
   return (
     <>
+      {/* flat near-black void: depth comes from fog falloff, nothing else */}
       <color attach="background" args={[VOID_COLOR]} />
-      <fog attach="fog" args={[VOID_COLOR, 220, 520]} />
-      <Stars radius={320} depth={60} count={1700} factor={2.4} saturation={0.1} fade speed={0.4} />
-      <Nebula layout={layout} />
+      <fog attach="fog" args={[VOID_COLOR, 200, 480]} />
       <TimelineDriver layout={layout} timeline={timeline} />
 
       <group onPointerMissed={() => onSelect(null)}>
@@ -164,10 +155,9 @@ export function Constellation({
           the composer's float render targets and would show a black void. */}
       {!new URLSearchParams(window.location.search).has('nofx') && (
         <EffectComposer>
-          <Bloom mipmapBlur intensity={1.15} luminanceThreshold={0.26} luminanceSmoothing={0.3} radius={0.78} />
-          <ChromaticAberration offset={new THREE.Vector2(0.0006, 0.001)} />
-          <Noise opacity={0.04} />
-          <Vignette offset={0.22} darkness={0.85} />
+          {/* restrained: only hover/selection/blast cross the threshold */}
+          <Bloom mipmapBlur intensity={0.5} luminanceThreshold={0.62} luminanceSmoothing={0.25} radius={0.6} />
+          <Vignette offset={0.26} darkness={0.62} />
         </EffectComposer>
       )}
     </>
