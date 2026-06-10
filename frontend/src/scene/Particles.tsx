@@ -2,12 +2,12 @@ import { useFrame } from '@react-three/fiber'
 import { useEffect, useMemo, useRef } from 'react'
 import * as THREE from 'three'
 import { type ColorMode, heatColor, type TimelineState } from '../effects'
-import { ACCENT_COLOR } from '../palette'
+import { ACCENT_COLOR, languageColor } from '../palette'
 import type { Layout } from '../types'
 import { CURVE_SEGMENTS, type CurveSet, makeGlowTexture } from './curves'
 
-const SPARK_PEARL = new THREE.Color('#cdd3dc')
 const SPARK_ACCENT = new THREE.Color(ACCENT_COLOR)
+const WHITE = new THREE.Color('#ffffff')
 
 interface ParticlesProps {
   layout: Layout
@@ -68,7 +68,8 @@ export function Particles({ layout, curves, focusSet, colorMode, timeline }: Par
     }
   }, [curves])
 
-  // Quiet pearl sparks at rest; accent-blue on the focused neighbourhood.
+  // Plankton drifting the currents: each spark glows in its target's hue,
+  // switching to bright accent on the focused neighbourhood.
   useEffect(() => {
     const c = new THREE.Color()
     for (let i = 0; i < count; i += 1) {
@@ -76,10 +77,10 @@ export function Particles({ layout, curves, focusSet, colorMode, timeline }: Par
       const touching =
         !focusSet || (focusSet.has(edge.source) && focusSet.has(edge.target))
       const target = layout.byId.get(edge.target)!
-      if (focusSet && touching) c.copy(SPARK_ACCENT).lerp(new THREE.Color('#ffffff'), 0.3)
+      if (focusSet && touching) c.copy(SPARK_ACCENT).lerp(WHITE, 0.3)
       else if (colorMode === 'heat') heatColor(target.heat ?? 0, c)
-      else c.copy(SPARK_PEARL)
-      c.multiplyScalar(focusSet ? (touching ? 1.5 : 0) : 0.45)
+      else c.copy(languageColor(target.language)).lerp(WHITE, 0.35)
+      c.multiplyScalar(focusSet ? (touching ? 1.6 : 0) : 0.9)
       for (let t = 0; t < TRAIL; t += 1) {
         const o = (i * TRAIL + t) * 3
         colors[o] = c.r * TRAIL_FADE[t]
@@ -133,7 +134,7 @@ export function Particles({ layout, curves, focusSet, colorMode, timeline }: Par
         <bufferAttribute attach="attributes-color" args={[colors, 3]} />
       </bufferGeometry>
       <pointsMaterial
-        size={1.5}
+        size={1.8}
         map={texture}
         vertexColors
         transparent

@@ -1,33 +1,36 @@
 import * as THREE from 'three'
 
 /**
- * Obsidian palette: quiet, desaturated tints on near-black. Languages stay
- * distinguishable but never shout — brightness (significance) carries the
- * hierarchy, and a single electric-blue accent marks anything interactive.
+ * Bioluminescent abyss palette: every hue lives in one cold luminous family
+ * (blues, cyans, teals, seafoam, with rare jellyfish pinks/violets), so the
+ * sky reads cohesive no matter the language mix. Nothing warm, nothing flat.
  */
 export const LANGUAGE_COLORS: Record<string, string> = {
-  python: '#8fbcb2',
-  typescript: '#8aa3cf',
-  javascript: '#c9b98a',
-  go: '#86afc4',
-  java: '#c4a183',
-  vue: '#8fb89a',
-  svelte: '#c49180',
-  ruby: '#c08c98',
-  rust: '#bb9c8c',
-  kotlin: '#a796c4',
-  swift: '#c4a98a',
-  scala: '#b78d8d',
-  c: '#a497b1',
-  cpp: '#a497b1',
-  csharp: '#a29ac4',
-  php: '#949cc0',
+  python: '#3fd6c9',
+  typescript: '#5d9eff',
+  javascript: '#7ee8b2',
+  go: '#4cc9f0',
+  java: '#7d8eff',
+  vue: '#46d595',
+  svelte: '#ff8fb3',
+  ruby: '#f072a8',
+  rust: '#d9a0d4',
+  kotlin: '#a78bfa',
+  swift: '#6ee7d8',
+  scala: '#c084fc',
+  c: '#8b9dc3',
+  cpp: '#8b9dc3',
+  csharp: '#818cf8',
+  php: '#6c8cd5',
 }
 
-export const DEFAULT_COLOR = '#9aa0ab'
-export const VOID_COLOR = '#0a0a0c'
+export const DEFAULT_COLOR = '#6fa8b8'
+/** Abyssal floor: the darkest point of the gradient, also the fog colour. */
+export const VOID_COLOR = '#050d14'
+/** The glow at the heart of the deep, behind the constellation. */
+export const DEEP_GLOW_COLOR = '#0e2a3a'
 /** The one accent: hover, selection, focus, controls. */
-export const ACCENT_COLOR = '#5b8cff'
+export const ACCENT_COLOR = '#4dd6c1'
 
 const cache = new Map<string, THREE.Color>()
 

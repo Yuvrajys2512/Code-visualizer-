@@ -25,8 +25,8 @@ export function ClusterLabels({ layout, focusSet }: ClusterLabelsProps) {
           text={cluster.label}
           subText={cluster.kind || undefined}
           fontSize={2.3 + Math.log2(1 + cluster.count) * 0.55}
-          color="#edeff3"
-          subColor="#82878f"
+          color="#e9f5f3"
+          subColor="#7da2a4"
           baseOpacity={0.5}
           bold
           near={Math.max(26, cluster.radius * 1.15)}

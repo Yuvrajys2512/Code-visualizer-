@@ -48,7 +48,7 @@ export function Shockwave({ layout, blastBox }: ShockwaveProps) {
             float facing = abs(dot(normalize(vNormalW), normalize(vViewW)));
             float rim = pow(1.0 - facing, 2.4);          // glow at the silhouette
             float sheen = pow(facing, 6.0) * 0.18;        // faint film face-on
-            vec3 tint = mix(vec3(0.55, 0.75, 1.0), vec3(1.0), rim);
+            vec3 tint = mix(vec3(0.35, 0.9, 0.8), vec3(1.0), rim);
             gl_FragColor = vec4(tint * (rim + sheen) * uIntensity, (rim + sheen) * uIntensity);
             #include <tonemapping_fragment>
             #include <colorspace_fragment>
@@ -66,8 +66,8 @@ export function Shockwave({ layout, blastBox }: ShockwaveProps) {
     const g = canvas.getContext('2d')!
     const grad = g.createRadialGradient(size / 2, size / 2, 0, size / 2, size / 2, size / 2)
     grad.addColorStop(0, 'rgba(255,255,255,1)')
-    grad.addColorStop(0.25, 'rgba(190,220,255,0.55)')
-    grad.addColorStop(1, 'rgba(120,170,255,0)')
+    grad.addColorStop(0.25, 'rgba(190,255,240,0.55)')
+    grad.addColorStop(1, 'rgba(90,220,200,0)')
     g.fillStyle = grad
     g.fillRect(0, 0, size, size)
     const texture = new THREE.CanvasTexture(canvas)

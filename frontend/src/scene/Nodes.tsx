@@ -29,7 +29,7 @@ interface NodesProps {
 
 const tmpMatrix = new THREE.Matrix4()
 const tmpColor = new THREE.Color()
-const DIM = new THREE.Color('#17181c')
+const DIM = new THREE.Color('#0f2029')
 const WHITE = new THREE.Color('#ffffff')
 const ACCENT = new THREE.Color(ACCENT_COLOR)
 
@@ -70,7 +70,7 @@ export function Nodes({
       positions[node.index * 3] = node.x
       positions[node.index * 3 + 1] = node.y
       positions[node.index * 3 + 2] = node.z
-      sizes[node.index] = node.radius * (4 + node.significance * 2.5)
+      sizes[node.index] = node.radius * (5.5 + node.significance * 3.5)
     }
     return { positions, sizes, colors: new Float32Array(layout.nodes.length * 3) }
   }, [layout])
@@ -152,33 +152,34 @@ export function Nodes({
       }
 
       // -- compose colour ---------------------------------------------------
-      // Hierarchy lives in lightness: significant files drift toward white,
-      // minor ones stay tinted grey. Only hover/flares push past 1.0.
+      // Every orb emits light; significance is luminosity. Important files
+      // drift toward pearl and cross the bloom threshold, minor ones glow
+      // softly in their own hue.
       if (!inFocus) {
         tmpColor.copy(DIM)
       } else {
         if (colorMode === 'heat') {
           heatColor(node.heat ?? 0, tmpColor)
-          tmpColor.multiplyScalar(0.7 + (node.heat ?? 0) * 0.7)
+          tmpColor.multiplyScalar(0.6 + (node.heat ?? 0) * 1.7)
         } else {
           tmpColor.copy(languageColor(node.language))
-          tmpColor.lerp(WHITE, 0.12 + node.significance * 0.55)
-          tmpColor.multiplyScalar(0.55 + node.significance * 0.65)
+          tmpColor.lerp(WHITE, node.significance * 0.3)
+          tmpColor.multiplyScalar(0.8 + node.significance * 1.7)
         }
         if (hovered) {
-          tmpColor.lerp(ACCENT, 0.55)
-          tmpColor.multiplyScalar(1.7)
+          tmpColor.lerp(ACCENT, 0.5)
+          tmpColor.multiplyScalar(1.6)
         }
-        tmpColor.multiplyScalar(vis * (1 + flare * 1.2) * blastDim)
+        tmpColor.multiplyScalar(vis * (1 + flare * 1.4) * blastDim)
         if (blastBoost > 0) {
           tmpColor.lerp(WHITE, Math.min(1, blastBoost * 0.45))
-          tmpColor.multiplyScalar(1 + blastBoost * 1.8)
+          tmpColor.multiplyScalar(1 + blastBoost * 2)
         }
       }
       mesh.setColorAt(i, tmpColor)
 
       // -- compose scale ----------------------------------------------------
-      const pulse = 1 + Math.sin(t * 1.1 + pulsePhases[i]) * 0.018
+      const pulse = 1 + Math.sin(t * 1.1 + pulsePhases[i]) * 0.04
       const swell =
         (inFocus ? (hovered ? 1.18 : 1) : 0.62) *
         vis *
@@ -189,14 +190,14 @@ export function Nodes({
       tmpMatrix.setPosition(node.x, node.y, node.z)
       mesh.setMatrixAt(i, tmpMatrix)
 
-      // -- halo: silent at rest, a clear accent ring when pointed at -------
+      // -- halo: the orb's light shed into the water around it -------------
       if (hovered) tmpColor.copy(ACCENT)
       else if (colorMode === 'heat') heatColor(node.heat ?? 0, tmpColor)
       else tmpColor.copy(languageColor(node.language))
       const haloLevel = !inFocus
-        ? 0.0
-        : (0.012 + node.significance * 0.04) *
-          (hovered ? 6 : 1) *
+        ? 0.004
+        : (0.05 + node.significance * 0.11) *
+          (hovered ? 2.5 : 1) *
           vis *
           (1 + flare * 1.2 + blastBoost * 2) *
           blastDim

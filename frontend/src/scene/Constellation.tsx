@@ -11,6 +11,7 @@ import {
 } from '../effects'
 import { VOID_COLOR } from '../palette'
 import type { Layout } from '../types'
+import { Abyss } from './Abyss'
 import { ClusterLabels } from './ClusterLabels'
 import { buildCurves } from './curves'
 import { Edges } from './Edges'
@@ -98,9 +99,9 @@ export function Constellation({
 
   return (
     <>
-      {/* flat near-black void: depth comes from fog falloff, nothing else */}
       <color attach="background" args={[VOID_COLOR]} />
-      <fog attach="fog" args={[VOID_COLOR, 200, 480]} />
+      <fog attach="fog" args={[VOID_COLOR, 210, 500]} />
+      <Abyss />
       <TimelineDriver layout={layout} timeline={timeline} />
 
       <group onPointerMissed={() => onSelect(null)}>
@@ -155,9 +156,9 @@ export function Constellation({
           the composer's float render targets and would show a black void. */}
       {!new URLSearchParams(window.location.search).has('nofx') && (
         <EffectComposer>
-          {/* restrained: only hover/selection/blast cross the threshold */}
-          <Bloom mipmapBlur intensity={0.5} luminanceThreshold={0.62} luminanceSmoothing={0.25} radius={0.6} />
-          <Vignette offset={0.26} darkness={0.62} />
+          {/* soft bioluminescent bloom: bright orbs shine, dim ones just glow */}
+          <Bloom mipmapBlur intensity={0.95} luminanceThreshold={0.32} luminanceSmoothing={0.3} radius={0.72} />
+          <Vignette offset={0.24} darkness={0.72} />
         </EffectComposer>
       )}
     </>

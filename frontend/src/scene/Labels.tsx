@@ -41,7 +41,7 @@ export function Labels({ layout, focusSet, selectedId }: LabelsProps) {
             position={[node.x, node.y + node.radius + 2.1, node.z]}
             text={node.name}
             fontSize={emphasised ? 2.7 : 1.8 + node.significance * 0.8}
-            color={emphasised ? ACCENT_COLOR : '#c4c9d2'}
+            color={emphasised ? ACCENT_COLOR : '#bfd4d6'}
             baseOpacity={emphasised ? 1 : 0.72}
             bold={emphasised}
             near={node.radius * 6 + 6}

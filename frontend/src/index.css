@@ -27,16 +27,17 @@
 }
 
 :root {
-  --bg: #0a0a0c;
-  --panel: rgba(15, 15, 18, 0.94);
-  --border: rgba(255, 255, 255, 0.08);
-  --border-strong: rgba(255, 255, 255, 0.14);
-  --text: #e6e7ea;
-  --text-mid: #9ba0a8;
-  --text-dim: #6b6f76;
-  --accent: #5b8cff;
-  --accent-soft: rgba(91, 140, 255, 0.12);
-  --accent-border: rgba(91, 140, 255, 0.4);
+  --bg: #050d14;
+  --panel: rgba(9, 18, 24, 0.92);
+  --border: rgba(160, 220, 220, 0.09);
+  --border-strong: rgba(160, 220, 220, 0.16);
+  --text: #e2edee;
+  --text-mid: #93a8ab;
+  --text-dim: #5f7479;
+  --accent: #4dd6c1;
+  --accent-soft: rgba(77, 214, 193, 0.12);
+  --accent-border: rgba(77, 214, 193, 0.45);
+  --accent-ink: #05241f;
   --mono: 'JetBrains Mono', Consolas, monospace;
 
   font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
@@ -152,7 +153,7 @@ body,
   font-size: 12.5px;
   font-weight: 600;
   letter-spacing: 0.02em;
-  color: #fff;
+  color: var(--accent-ink);
   background: var(--accent);
   border: none;
   border-radius: 6px;
@@ -161,7 +162,7 @@ body,
 }
 
 .header button:hover:not(:disabled) {
-  background: #6f9bff;
+  background: #67e2cf;
 }
 
 .header button:active:not(:disabled) {
@@ -342,7 +343,7 @@ body,
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #9db9ff;
+  color: #8fe5d6;
   background: var(--accent-soft);
   border: 1px solid var(--accent-border);
   border-radius: 4px;
@@ -463,7 +464,7 @@ body,
   width: 32px;
   height: 32px;
   font-size: 11px;
-  color: #fff;
+  color: var(--accent-ink);
   background: var(--accent);
   border: none;
   border-radius: 50%;
@@ -472,7 +473,7 @@ body,
 }
 
 .timeline-play:hover {
-  background: #6f9bff;
+  background: #67e2cf;
 }
 
 .timeline-play:active {
@@ -580,7 +581,7 @@ body,
 }
 
 .mode-toggle button.on {
-  color: #fff;
+  color: var(--accent-ink);
   background: var(--accent);
 }
 
@@ -614,7 +615,7 @@ body,
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.02em;
-  color: #9db9ff;
+  color: #8fe5d6;
   background: var(--accent-soft);
   border: 1px solid var(--accent-border);
   border-radius: 6px;
@@ -623,7 +624,7 @@ body,
 }
 
 .blast-btn:hover {
-  background: rgba(91, 140, 255, 0.22);
+  background: rgba(77, 214, 193, 0.22);
 }
 
 .blast-result {
@@ -634,7 +635,7 @@ body,
 }
 
 .blast-result strong {
-  color: #cdddff;
+  color: #c6fff3;
 }
 
 /* ---- gallery -------------------------------------------------------------- */
